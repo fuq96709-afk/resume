@@ -113,17 +113,6 @@ export default function Home() {
         <div className="hero-object object-cube" aria-hidden="true"><i /><b /><span /></div>
       </section>
 
-      <section className="signal" aria-label="实践成果">
-        <div className="signal-track">
-          <span>数千条短视频素材制作</span>
-          <span>多条作品播放量 20 万+</span>
-          <span>TikTok AI 视频制作端 0 到 1 实践</span>
-          <span aria-hidden="true">数千条短视频素材制作</span>
-          <span aria-hidden="true">多条作品播放量 20 万+</span>
-          <span aria-hidden="true">TikTok AI 视频制作端 0 到 1 实践</span>
-        </div>
-      </section>
-
       <section className="work shell section-space" id="work">
         <div className="section-heading">
           <h2>精选作品</h2>
