@@ -23,7 +23,6 @@ export default function HeroFlipCard() {
         </span>
 
         <span className="hero-card-face hero-card-back">
-          <span className="back-index">01</span>
           <span className="back-kicker">CREATIVE DIRECTION</span>
           <strong>让产品内容<br />更有观看感</strong>
           <span className="back-divider" aria-hidden="true" />

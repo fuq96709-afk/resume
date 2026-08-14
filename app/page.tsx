@@ -94,6 +94,8 @@ export default function Home() {
       </header>
 
       <section className="hero shell" id="home">
+        <div className="hero-word" aria-hidden="true">AIGC VIDEO</div>
+
         <div className="hero-center">
           <h1>你好，我是付沣！</h1>
           <p className="hero-role">AIGC 视频创作者</p>
