@@ -82,47 +82,44 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <nav className="nav shell" aria-label="主导航">
-          <a className="wordmark" href="#home" aria-label="返回首页">
-            付沣
-          </a>
+        <nav className="nav" aria-label="主导航">
           <div className="nav-links">
-            <a href="#work">作品</a>
-            <a href="#skills">技能</a>
-            <a href="#career">经历</a>
+            <a className="is-active" href="#home">首页</a>
             <a href="#about">关于</a>
+            <a href="#skills">技能</a>
+            <a href="#work">作品</a>
+            <a href="#career">经历</a>
+            <a href="#contact">联系</a>
           </div>
-          <a className="nav-contact" href="#contact">
-            联系我
-          </a>
         </nav>
       </header>
 
       <section className="hero shell" id="home">
-        <div className="hero-copy">
-          <p className="hero-name">你好，我是付沣</p>
-          <h1>AIGC 视频创作者</h1>
-          <p className="hero-intro">从产品实拍走向 AI 影像，专注短视频创意、脚本与生成制作。</p>
-          <a className="primary-action" href="#work">
-            查看作品
-          </a>
-        </div>
+        <div className="hero-center">
+          <h1>Hi, I&apos;m <em>Fu Feng!</em></h1>
+          <p className="hero-role">AIGC 视频创作者</p>
 
-        <div className="hero-stage" aria-label="AIGC 视频创作视觉卡片">
-          <div className="stage-card stage-main">
+          <div className="hero-media" aria-label="AIGC 视频作品主视觉">
+            <div className="media-glow" aria-hidden="true" />
             <span>AIGC</span>
             <strong>VIDEO</strong>
+            <i className="play-mark" aria-hidden="true" />
           </div>
-          <div className="shape shape-orange" aria-hidden="true" />
-          <div className="shape shape-violet" aria-hidden="true" />
-          <div className="shape shape-blue" aria-hidden="true" />
-          <div className="stage-note">
-            <span>创意</span>
-            <span>脚本</span>
-            <span>生成</span>
-            <span>剪辑</span>
+
+          <div className="hero-tool-row" aria-label="主要创作能力">
+            <div aria-hidden="true"><span>AI</span><span>剪</span><span>创</span></div>
+            <p>创意、脚本、生成与剪辑</p>
           </div>
+
+          <a className="primary-action" href="#contact">联系我</a>
         </div>
+
+        <div className="hero-object object-pyramid" aria-hidden="true"><i /><b /><span /></div>
+        <div className="hero-object object-star" aria-hidden="true" />
+        <div className="hero-object object-orb" aria-hidden="true" />
+        <div className="hero-object object-capsule" aria-hidden="true" />
+        <div className="hero-object object-softcube" aria-hidden="true" />
+        <div className="hero-object object-cube" aria-hidden="true"><i /><b /><span /></div>
       </section>
 
       <section className="signal" aria-label="实践成果">
