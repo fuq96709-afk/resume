@@ -86,10 +86,8 @@ export default function Home() {
         <nav className="nav" aria-label="主导航">
           <div className="nav-links">
             <a className="is-active" href="#home">首页</a>
-            <a href="#about">关于</a>
-            <a href="#skills">技能</a>
+            <a href="#about">关于我</a>
             <a href="#work">作品</a>
-            <a href="#career">经历</a>
             <a href="#contact">联系</a>
           </div>
         </nav>
