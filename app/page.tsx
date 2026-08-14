@@ -113,6 +113,27 @@ export default function Home() {
         <div className="hero-object object-cube" aria-hidden="true"><i /><b /><span /></div>
       </section>
 
+      <section className="about" id="about">
+        <div className="shell about-grid section-space">
+          <div className="about-title">
+            <span>F</span>
+            <h2>关于我</h2>
+          </div>
+          <div className="about-copy">
+            <p>
+              作为 2026 届应届本科毕业生，我具备多段真实职场经历，对工作节奏、团队协作和实际业务环境有直接理解。
+            </p>
+            <p>
+              进入现公司后，我从 Temu 产品实拍逐步转向 AIGC 视频制作，并参与 TikTok AI 视频制作端从 0 到 1 落地。目前持续学习 Codex、Hermes 与 Agent，希望进一步提升 AI 在实际工作中的应用能力。
+            </p>
+            <div className="education">
+              <p>广州应用科技学院｜市场营销（本科）｜2024.09 - 2026.06</p>
+              <p>广东技师学院｜工程管理（大专）｜2017.09 - 2021.06</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="work shell section-space" id="work">
         <div className="section-heading">
           <h2>精选作品</h2>
@@ -170,27 +191,6 @@ export default function Home() {
               <p>{item.body}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="about" id="about">
-        <div className="shell about-grid section-space">
-          <div className="about-title">
-            <span>F</span>
-            <h2>关于我</h2>
-          </div>
-          <div className="about-copy">
-            <p>
-              作为 2026 届应届本科毕业生，我具备多段真实职场经历，对工作节奏、团队协作和实际业务环境有直接理解。
-            </p>
-            <p>
-              进入现公司后，我从 Temu 产品实拍逐步转向 AIGC 视频制作，并参与 TikTok AI 视频制作端从 0 到 1 落地。目前持续学习 Codex、Hermes 与 Agent，希望进一步提升 AI 在实际工作中的应用能力。
-            </p>
-            <div className="education">
-              <p>广州应用科技学院｜市场营销（本科）｜2024.09 - 2026.06</p>
-              <p>广东技师学院｜工程管理（大专）｜2017.09 - 2021.06</p>
-            </div>
-          </div>
         </div>
       </section>
 
