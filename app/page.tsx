@@ -96,7 +96,7 @@ export default function Home() {
 
       <section className="hero shell" id="home">
         <div className="hero-center">
-          <h1>Hi, I&apos;m <em>Fu Feng!</em></h1>
+          <h1>你好，我是付沣！</h1>
           <p className="hero-role">AIGC 视频创作者</p>
 
           <div className="hero-media" aria-label="AIGC 视频作品主视觉">
@@ -104,11 +104,6 @@ export default function Home() {
             <span>AIGC</span>
             <strong>VIDEO</strong>
             <i className="play-mark" aria-hidden="true" />
-          </div>
-
-          <div className="hero-tool-row" aria-label="主要创作能力">
-            <div aria-hidden="true"><span>AI</span><span>剪</span><span>创</span></div>
-            <p>创意、脚本、生成与剪辑</p>
           </div>
 
           <a className="primary-action" href="#contact">联系我</a>

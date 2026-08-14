@@ -154,14 +154,6 @@ a {
   font-weight: 690;
 }
 
-.hero h1 em {
-  font-family: var(--font-pt-serif), Georgia, serif;
-  font-style: italic;
-  font-weight: 760;
-  line-height: 1.12;
-  padding-bottom: 3px;
-}
-
 .hero-role {
   margin: 16px 0 18px;
   color: #5f6167;
@@ -236,42 +228,8 @@ a {
   border-left: 12px solid #5c52b8;
 }
 
-.hero-tool-row {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  margin-top: 18px;
-}
-
-.hero-tool-row > div {
-  display: flex;
-}
-
-.hero-tool-row > div span {
-  width: 28px;
-  height: 28px;
-  display: grid;
-  place-items: center;
-  margin-left: -6px;
-  border: 2px solid var(--paper);
-  border-radius: 50%;
-  background: #2d2e33;
-  color: #fff;
-  font-size: 9px;
-  font-weight: 740;
-}
-
-.hero-tool-row > div span:nth-child(2) { background: var(--accent); }
-.hero-tool-row > div span:nth-child(3) { background: var(--violet); }
-
-.hero-tool-row p {
-  margin: 0;
-  color: #5f6167;
-  font-size: 12px;
-}
-
 .hero-center .primary-action {
-  margin-top: 17px;
+  margin-top: 20px;
 }
 
 .hero-object {
@@ -1021,10 +979,6 @@ a {
 
   .hero-media > span { font-size: 52px; }
   .hero-media > strong { font-size: 60px; }
-
-  .hero-tool-row p {
-    font-size: 11px;
-  }
 
   .object-pyramid {
     width: 82px;
