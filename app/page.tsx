@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HeroFlipCard from "./HeroFlipCard";
 
 export const metadata: Metadata = {
   title: "付沣 | AIGC 视频作品集",
@@ -99,12 +100,7 @@ export default function Home() {
           <h1>你好，我是付沣！</h1>
           <p className="hero-role">AIGC 视频创作者</p>
 
-          <div className="hero-media" aria-label="AIGC 视频作品主视觉">
-            <div className="media-glow" aria-hidden="true" />
-            <span>AIGC</span>
-            <strong>VIDEO</strong>
-            <i className="play-mark" aria-hidden="true" />
-          </div>
+          <HeroFlipCard />
 
           <a className="primary-action" href="#contact">联系我</a>
         </div>
