@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CareerExperience from "./CareerExperience";
+import HomeEntry from "./HomeEntry";
 import WorkShowcase from "./WorkShowcase";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      <HomeEntry />
       <header className="site-header">
         <nav className="nav" aria-label="主导航">
           <div className="nav-links">
