@@ -64,9 +64,20 @@ export default function Home() {
 
       <footer className="portfolio-footer" id="contact">
         <div className="portfolio-footer-inner">
-          <h2>Let&apos;s create<br />something real.</h2>
-          <div className="footer-actions">
-            <a href="mailto:fuq97609@gmail.com" data-cursor="Email" data-cursor-icon="↗">fuq97609@gmail.com</a>
+          <p className="footer-eyebrow">LET&apos;S CREATE SOMETHING MEANINGFUL</p>
+          <h2 className="footer-title">
+            <span>让我们给这个世界</span>
+            <span className="footer-title-outline">带点不一样的吧。</span>
+          </h2>
+
+          <a className="footer-email" href="mailto:fuq97609@gmail.com" data-cursor="Email" data-cursor-icon="↗">
+            <span>fuq97609@gmail.com</span>
+            <span className="footer-email-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <div className="footer-bottom">
+            <p>© 2026 FU FENG</p>
+            <a href="#home">返回顶部 ↑</a>
           </div>
         </div>
       </footer>
