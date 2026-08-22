@@ -134,8 +134,6 @@ export default function CareerExperience() {
                     transition={{ type: "spring", stiffness: 340, damping: 28, mass: 0.75 }}
                     onHoverStart={() => setHoveredExperience(index)}
                     onHoverEnd={() => setHoveredExperience(null)}
-                    data-cursor="Experience"
-                    data-cursor-icon="↗"
                   >
                   <span className="career-node" aria-hidden="true" />
                   <time>{experience.date}</time>
