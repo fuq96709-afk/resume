@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Onest } from "next/font/google";
+import { Onest, Public_Sans } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "./CustomCursor";
 
 const onest = Onest({
   variable: "--font-onest",
   subsets: ["latin"],
+});
+
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
+  subsets: ["latin"],
+  weight: ["900"],
 });
 
 export const metadata: Metadata = {
@@ -19,8 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body className={onest.variable}>
+      <body className={`${onest.variable} ${publicSans.variable}`}>
         {children}
+        <CustomCursor />
       </body>
     </html>
   );
