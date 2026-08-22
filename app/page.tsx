@@ -35,9 +35,15 @@ export default function Home() {
             <h1>你好，我是付沣！</h1>
             <p>AIGC 视频创作者</p>
           </div>
-          <div className="hero-profile-card" data-cursor="About Me">
+          <a
+            className="hero-profile-card"
+            href="#about"
+            aria-label="前往关于我"
+            data-cursor="About Me"
+            data-cursor-icon="↗"
+          >
             <Image src="/portrait-web.png" alt="付沣的个人形象照" fill priority sizes="280px" />
-          </div>
+          </a>
           <p className="hero-profile-meta">AI 视频创作 / AI 工作流实践</p>
           <a className="hero-cta" href="#contact" data-cursor="Contact" data-cursor-icon="↓">
             <span className="hero-cta-label">Let&apos;s Work Together!</span>

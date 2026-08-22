@@ -2190,6 +2190,17 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   border-radius: 58px;
   background: #6470f3;
   box-shadow: 0 22px 44px rgba(75, 83, 154, 0.16);
+  transition: box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1), filter 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-profile-card:hover {
+  box-shadow: 0 28px 58px rgba(75, 83, 154, 0.22);
+  filter: saturate(1.04);
+}
+
+.hero-profile-card:focus-visible {
+  outline: 3px solid rgba(241, 102, 69, 0.72);
+  outline-offset: 6px;
 }
 
 .hero-profile-card img {
