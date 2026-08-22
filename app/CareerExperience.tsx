@@ -79,8 +79,6 @@ export default function CareerExperience() {
             className="career-portrait"
             onPointerMove={setPointerVariables}
             onPointerLeave={resetTilt}
-            data-cursor="About Me"
-            data-cursor-icon="↗"
           >
             <Image src="/career-workspace.png" alt="付沣在创作工作台前的工作场景" fill sizes="(max-width: 760px) 100vw, 420px" />
           </figure>
