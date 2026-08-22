@@ -13,6 +13,17 @@ export default function Home() {
     <main>
       <header className="site-header">
         <nav className="nav" aria-label="主导航">
+          <a
+            className="nav-resume"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="Resume"
+            data-cursor-icon="↗"
+          >
+            <span>简历</span>
+            <span className="nav-resume-arrow" aria-hidden="true">↗</span>
+          </a>
           <div className="nav-links">
             <a className="is-active" href="#home">首页</a>
             <a href="#about">关于我</a>
@@ -61,7 +72,6 @@ export default function Home() {
           <h2>Let&apos;s create<br />something real.</h2>
           <div className="footer-actions">
             <a href="mailto:fuq97609@gmail.com" data-cursor="Email" data-cursor-icon="↗">fuq97609@gmail.com</a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" data-cursor="Resume" data-cursor-icon="↗">查看简历</a>
           </div>
         </div>
       </footer>
