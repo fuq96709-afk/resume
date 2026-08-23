@@ -37,8 +37,11 @@ export default function AchievementsPage() {
 
       <section className="project-collection-section" id="projects" aria-labelledby="project-collection-title">
         <div className="project-collection-heading">
-          <p>Project Collection</p>
-          <h2 id="project-collection-title">项目集</h2>
+          <span>CURATED AIGC WORKS · 2026</span>
+          <div className="project-collection-title-row">
+            <p>PORTFOLIO</p>
+            <h2 id="project-collection-title">作品集</h2>
+          </div>
         </div>
       </section>
     </main>
