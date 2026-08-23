@@ -72,10 +72,18 @@ export default function Home() {
             <span className="footer-title-outline">带点不一样的吧。</span>
           </h2>
 
-          <a className="footer-email" href="mailto:fuq97609@gmail.com" data-cursor="Email" data-cursor-icon="↗">
-            <span>fuq97609@gmail.com</span>
-            <span className="footer-email-arrow" aria-hidden="true">↗</span>
-          </a>
+          <div className="footer-contacts" aria-label="联系方式">
+            <a className="footer-contact" href="tel:18129917940" data-cursor="Call" data-cursor-icon="↗">
+              <span className="footer-contact-label">Phone / WeChat</span>
+              <span className="footer-contact-value">18129917940</span>
+              <span className="footer-contact-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a className="footer-contact" href="mailto:fuq97609@gmail.com" data-cursor="Email" data-cursor-icon="↗">
+              <span className="footer-contact-label">Email</span>
+              <span className="footer-contact-value">fuq97609@gmail.com</span>
+              <span className="footer-contact-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
 
           <div className="footer-bottom">
             <p>© 2026 FU FENG</p>
@@ -86,3 +94,4 @@ export default function Home() {
     </main>
   );
 }
+
