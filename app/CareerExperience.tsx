@@ -96,13 +96,6 @@ export default function CareerExperience() {
               </p>
             </div>
 
-            <dl className="career-facts">
-              <div><dt>当前方向</dt><dd>AIGC 视频创作</dd></div>
-              <div><dt>目标岗位</dt><dd>AIGC 视频制作 / AI 短视频内容创作</dd></div>
-              <div><dt>电话</dt><dd>18129917940</dd></div>
-              <div><dt>邮箱</dt><dd>fuq97609@gmail.com</dd></div>
-            </dl>
-
             <div className="career-evidence" aria-label="工作成果">
               <div><strong>0 到 1</strong><span>TikTok AI 制作端实践</span></div>
               <div><strong>数千条</strong><span>短视频素材制作</span></div>
@@ -167,3 +160,4 @@ export default function CareerExperience() {
     </section>
   );
 }
+
