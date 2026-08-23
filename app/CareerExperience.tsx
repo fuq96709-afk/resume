@@ -103,12 +103,12 @@ export default function CareerExperience() {
               <div>
                 <strong>20 万+</strong>
                 <span>多条作品播放表现</span>
-                <Link className="career-achievement-link" href="/achievements">成就 →</Link>
               </div>
             </div>
 
             <div className="career-tags" aria-label="正在实践的方向">
               <span>AIGC 视频</span><span>产品内容</span><span>AI 工作流</span><span>Agent 实践</span>
+              <Link className="career-achievement-link" href="/achievements">成就 →</Link>
             </div>
           </div>
         </div>
