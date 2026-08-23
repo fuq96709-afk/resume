@@ -3322,6 +3322,43 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   margin-top: 72px;
 }
 
+.project-collection-section {
+  min-height: 100dvh;
+  padding: clamp(96px, 12vw, 150px) max(24px, calc((100% - 1120px) / 2)) 120px;
+  border-top: 1px solid rgba(32, 33, 36, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.project-collection-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.5vw, 34px);
+  width: 100%;
+}
+
+.project-collection-heading p,
+.project-collection-heading h2 {
+  margin: 0;
+  color: transparent;
+  -webkit-text-stroke: 1.25px rgba(32, 33, 36, 0.72);
+  font-weight: 650;
+  line-height: 0.95;
+}
+
+.project-collection-heading p {
+  font-size: clamp(42px, 6.8vw, 92px);
+  letter-spacing: -0.045em;
+}
+
+.project-collection-heading h2 {
+  padding-left: clamp(18px, 2.5vw, 34px);
+  border-left: 2px solid rgba(32, 33, 36, 0.82);
+  font-size: clamp(48px, 7.4vw, 100px);
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+
 @media (max-width: 680px) {
   .career-achievement-link {
     min-width: 86px;
@@ -3347,5 +3384,13 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   .achievements-heading h1 { padding-left: 12px; font-size: clamp(32px, 9vw, 46px); }
 
   .achievements-carousel-wrap { height: 430px !important; margin-top: 52px; }
+
+  .project-collection-section {
+    padding: 86px 16px 72px;
+  }
+
+  .project-collection-heading { gap: 10px; }
+  .project-collection-heading p { font-size: clamp(25px, 7.4vw, 36px); }
+  .project-collection-heading h2 { padding-left: 11px; font-size: clamp(32px, 9vw, 44px); }
 }
 
