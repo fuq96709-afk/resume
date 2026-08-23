@@ -28,6 +28,7 @@ export default function AchievementsPage() {
       <section className="achievements-shell">
         <Link className="achievements-back" href="/#about">← 返回关于我</Link>
         <div className="achievements-heading">
+          <div className="achievements-kicker"><span>AIGC MILESTONES · 2026</span></div>
           <p>ACHIEVEMENTS</p>
           <h1>成就</h1>
         </div>
