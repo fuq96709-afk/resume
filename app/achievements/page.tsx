@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ScrollRevealText from "../ScrollRevealText";
 import SiteHeader from "../SiteHeader";
 import AchievementsCarousel from "./AchievementsCarousel";
 
@@ -22,6 +23,10 @@ export default function AchievementsPage() {
             <h1>成就</h1>
           </div>
         </div>
+
+        <ScrollRevealText className="achievements-intro-reveal">
+          从真实数据出发， 记录每一次创作、 验证与成长。
+        </ScrollRevealText>
 
         <AchievementsCarousel />
       </section>
