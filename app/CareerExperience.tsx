@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { useState } from "react";
@@ -99,7 +100,11 @@ export default function CareerExperience() {
             <div className="career-evidence" aria-label="工作成果">
               <div><strong>0 到 1</strong><span>TikTok AI 制作端实践</span></div>
               <div><strong>数千条</strong><span>短视频素材制作</span></div>
-              <div><strong>20 万+</strong><span>多条作品播放表现</span></div>
+              <div>
+                <strong>20 万+</strong>
+                <span>多条作品播放表现</span>
+                <Link className="career-achievement-link" href="/achievements">成就 →</Link>
+              </div>
             </div>
 
             <div className="career-tags" aria-label="正在实践的方向">
