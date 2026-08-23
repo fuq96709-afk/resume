@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CareerExperience from "./CareerExperience";
 import HomeEntry from "./HomeEntry";
+import SiteHeader from "./SiteHeader";
 import WorkShowcase from "./WorkShowcase";
 
 export const metadata: Metadata = {
@@ -13,20 +14,7 @@ export default function Home() {
   return (
     <main>
       <HomeEntry />
-      <header className="site-header">
-        <nav className="nav" aria-label="主导航">
-          <div className="nav-links">
-            <a className="is-active" href="#home">首页</a>
-            <a href="#about">关于我</a>
-            <a href="#career">工作经历</a>
-            <a href="#work">作品</a>
-          </div>
-          <div className="nav-actions" aria-label="快捷操作">
-            <a className="nav-action nav-action-contact" href="#contact">联系</a>
-            <a className="nav-action nav-action-resume" href="/resume.pdf" target="_blank" rel="noreferrer">简历</a>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader activeItem="home" />
 
       <section className="hero" id="home">
         <div className="hero-stage">
