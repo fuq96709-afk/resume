@@ -18,6 +18,10 @@ export default function AchievementsPage() {
             <Link href="/#career">工作经历</Link>
             <Link href="/#work">作品</Link>
           </div>
+          <div className="nav-actions" aria-label="快捷操作">
+            <Link className="nav-action nav-action-contact" href="/#contact">联系</Link>
+            <a className="nav-action nav-action-resume" href="/resume.pdf" target="_blank" rel="noreferrer">简历</a>
+          </div>
         </nav>
       </header>
 
@@ -33,3 +37,4 @@ export default function AchievementsPage() {
     </main>
   );
 }
+
