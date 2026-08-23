@@ -3200,15 +3200,15 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 112px;
-  min-height: 48px;
-  margin-left: auto;
-  padding: 12px 20px;
+  min-width: 94px;
+  min-height: 40px;
+  margin-top: 22px;
+  padding: 9px 15px;
   border: 1px solid rgba(32, 33, 36, 0.32);
   border-radius: 8px;
   color: var(--career-accent);
   background: rgba(255, 255, 255, 0.28);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 680;
   letter-spacing: 0.03em;
   line-height: 1;
@@ -3279,9 +3279,10 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 
 @media (max-width: 680px) {
   .career-achievement-link {
-    min-width: 96px;
-    min-height: 42px;
-    padding: 10px 15px;
+    min-width: 86px;
+    min-height: 36px;
+    margin-top: 18px;
+    padding: 8px 12px;
     font-size: 11px;
   }
 
