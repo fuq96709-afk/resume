@@ -13,7 +13,7 @@ export default function HeroTiltedPortrait() {
       imageHeight="100%"
       imageWidth="100%"
       rotateAmplitude={12}
-      scaleOnHover={1.08}
+      scaleOnHover={1.2}
       showMobileWarning={false}
       showTooltip={true}
       displayOverlayContent={true}
