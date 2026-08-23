@@ -206,6 +206,7 @@
 
 .career-tags {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 9px;
   margin-top: 30px;
@@ -3197,19 +3198,21 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 /* Achievements entry and page */
 .career-achievement-link {
   display: inline-flex;
-  width: fit-content;
   align-items: center;
   justify-content: center;
-  margin-top: 18px;
-  padding: 7px 13px;
-  border: 1px solid rgba(241, 102, 69, 0.48);
-  border-radius: 999px;
+  min-width: 112px;
+  min-height: 48px;
+  margin-left: auto;
+  padding: 12px 20px;
+  border: 1px solid rgba(32, 33, 36, 0.32);
+  border-radius: 8px;
   color: var(--career-accent);
-  background: transparent;
-  font-size: 11px;
-  font-weight: 700;
+  background: rgba(255, 255, 255, 0.28);
+  font-size: 13px;
+  font-weight: 680;
+  letter-spacing: 0.03em;
   line-height: 1;
-  transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease, transform 220ms ease;
+  transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
 }
 
 .career-achievement-link:hover {
@@ -3217,6 +3220,7 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   color: #ffffff;
   background: var(--career-accent);
   transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(241, 102, 69, 0.18);
 }
 
 .career-achievement-link:active { transform: translateY(0); }
@@ -3274,7 +3278,12 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 }
 
 @media (max-width: 680px) {
-  .career-achievement-link { margin-top: 14px; padding: 6px 10px; font-size: 10px; }
+  .career-achievement-link {
+    min-width: 96px;
+    min-height: 42px;
+    padding: 10px 15px;
+    font-size: 11px;
+  }
 
   .achievements-shell {
     width: calc(100% - 32px);
