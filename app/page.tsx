@@ -21,6 +21,10 @@ export default function Home() {
             <a href="#career">工作经历</a>
             <a href="#work">作品</a>
           </div>
+          <div className="nav-actions" aria-label="快捷操作">
+            <a className="nav-action nav-action-contact" href="#contact">联系</a>
+            <a className="nav-action nav-action-resume" href="/resume.pdf" target="_blank" rel="noreferrer">简历</a>
+          </div>
         </nav>
       </header>
 
