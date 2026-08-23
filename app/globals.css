@@ -968,9 +968,13 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 }
 
 .nav-actions {
+  position: fixed;
+  top: 22px;
+  right: clamp(16px, 3vw, 40px);
   display: flex;
   align-items: center;
   gap: 7px;
+  pointer-events: auto;
 }
 
 .nav-action {
@@ -1016,6 +1020,30 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   border-color: #202124;
   background: #202124;
   color: #fff;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    justify-content: flex-start;
+    padding-left: 14px;
+  }
+
+  .nav-actions {
+    right: 14px;
+  }
+
+  .nav-links {
+    font-size: 10px;
+  }
+
+  .nav-links a {
+    padding: 9px 10px;
+  }
+
+  .nav-action {
+    min-width: 50px;
+    padding-inline: 13px;
+  }
 }
 
 .primary-action {
@@ -1979,6 +2007,7 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   }
 
   .nav-actions {
+    right: 12px;
     gap: 5px;
   }
 
