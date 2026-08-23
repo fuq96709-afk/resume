@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import ScrollRevealText from "./ScrollRevealText";
 
 const videos = [
   { src: "/works/tarot-jewelry.mp4", title: "塔罗珠宝品牌氛围", tag: "AI BRAND FILM" },
@@ -108,7 +109,9 @@ export default function WorkShowcase() {
         <div className="work-sop-copy">
           <header className="work-sop-heading">
             <h2>SELECTED<br />WORKS</h2>
-            <p>先找对方向，再让 AI 提高制作效率。每一步都以真实产品、合规表达和数据结果为判断标准。</p>
+            <ScrollRevealText className="work-scroll-reveal">
+              先找对方向， 再让 AI 提高制作效率。 每一步都以真实产品、 合规表达和数据结果为判断标准。
+            </ScrollRevealText>
           </header>
 
           <div className="sop-steps" aria-label="AI 短视频制作流程">
