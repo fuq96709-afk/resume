@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteHeader from "../SiteHeader";
 import AchievementsCarousel from "./AchievementsCarousel";
 
 export const metadata: Metadata = {
@@ -10,20 +11,7 @@ export const metadata: Metadata = {
 export default function AchievementsPage() {
   return (
     <main className="achievements-page">
-      <header className="site-header">
-        <nav className="nav" aria-label="主导航">
-          <div className="nav-links">
-            <Link href="/#home">首页</Link>
-            <Link href="/#about">关于我</Link>
-            <Link href="/#career">工作经历</Link>
-            <Link href="/#work">作品</Link>
-          </div>
-          <div className="nav-actions" aria-label="快捷操作">
-            <Link className="nav-action nav-action-contact" href="/#contact">联系</Link>
-            <a className="nav-action nav-action-resume" href="/resume.pdf" target="_blank" rel="noreferrer">简历</a>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <section className="achievements-shell">
         <Link className="achievements-back" href="/#about">← 返回关于我</Link>
