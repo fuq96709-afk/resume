@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { useState } from "react";
+import ScrollRevealText from "./ScrollRevealText";
 
 const experiences = [
   {
@@ -86,15 +87,15 @@ export default function CareerExperience() {
 
           <div className="career-profile">
             <div className="career-summary">
-              <p>
-                我是2026届本科毕业生，但我的职业经历比校园生活开始得更早。过去几年的工作经历，让我更早接触真实的业务环境，也让我养成了持续学习和主动解决问题的习惯。
-              </p>
-              <p>
-                实习进入现公司后，我从Temu产品实拍逐步转向AIGC视频制作，并参与TikTok AI视频制作端从0到1落地，随后转为正式员工。
-              </p>
-              <p>
-                现在，我仍在持续探索Codex、Hermes、Agent等AI工具。对我来说，AI不只是一个工具，我更关注如何让AI真正参与工作、解决问题和提升效率。
-              </p>
+              <ScrollRevealText className="career-scroll-reveal">
+                我是 2026 届本科毕业生， 但我的职业经历比校园生活开始得更早。 过去几年的工作经历， 让我更早接触真实的业务环境， 也让我养成了持续学习和主动解决问题的习惯。
+              </ScrollRevealText>
+              <ScrollRevealText className="career-scroll-reveal">
+                实习进入现公司后， 我从 Temu 产品实拍逐步转向 AIGC 视频制作， 并参与 TikTok AI 视频制作端从 0 到 1 落地， 随后转为正式员工。
+              </ScrollRevealText>
+              <ScrollRevealText className="career-scroll-reveal">
+                现在， 我仍在持续探索 Codex、 Hermes、 Agent 等 AI 工具。 对我来说， AI 不只是一个工具， 我更关注如何让 AI 真正参与工作、 解决问题和提升效率。
+              </ScrollRevealText>
             </div>
 
             <div className="career-evidence" aria-label="工作成果">
