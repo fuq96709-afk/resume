@@ -3282,70 +3282,39 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 
 .achievements-heading {
   position: relative;
-  isolation: isolate;
-  min-height: clamp(220px, 27vw, 300px);
-  margin-top: 48px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-content: center;
+  min-height: clamp(190px, 22vw, 250px);
+  margin-top: 52px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  column-gap: clamp(18px, 3vw, 36px);
-  padding: 44px clamp(28px, 6vw, 72px);
-  border-radius: 32px;
-  color: #fff;
-  background:
-    radial-gradient(circle at 57% 108%, rgba(91, 222, 205, 0.72) 0, rgba(91, 222, 205, 0.22) 18%, transparent 40%),
-    radial-gradient(circle at 54% 2%, rgba(241, 102, 69, 0.34), transparent 35%),
-    #242424;
-  box-shadow: 0 24px 54px rgba(32, 33, 36, 0.12);
-}
-
-.achievements-heading::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 52%;
-  left: 56%;
-  width: clamp(220px, 31vw, 360px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 34px rgba(255, 255, 255, 0.055),
-    0 0 0 72px rgba(255, 255, 255, 0.035);
-  transform: translate(-50%, -50%);
+  gap: clamp(18px, 2.5vw, 32px);
+  padding: 24px 20px;
+  color: transparent;
+  background: transparent;
 }
 
 .achievements-heading p {
   align-self: center;
   margin: 0;
-  color: #fff;
-  font-size: clamp(34px, 5.2vw, 68px);
-  font-weight: 790;
+  color: transparent;
+  -webkit-text-stroke: 1.25px rgba(32, 33, 36, 0.72);
+  font-size: clamp(42px, 6.3vw, 82px);
+  font-weight: 650;
   line-height: 0.96;
-  letter-spacing: 0.025em;
+  letter-spacing: -0.035em;
 }
 
 .achievements-heading h1 {
   align-self: center;
   margin: 0;
   padding-left: clamp(18px, 3vw, 36px);
-  border-left: 3px solid rgba(255, 255, 255, 0.82);
-  font-size: clamp(42px, 6vw, 78px);
-  font-weight: 780;
+  border-left: 2px solid rgba(32, 33, 36, 0.82);
+  color: transparent;
+  -webkit-text-stroke: 1.25px rgba(32, 33, 36, 0.72);
+  font-size: clamp(48px, 7vw, 90px);
+  font-weight: 650;
   line-height: 0.96;
   letter-spacing: -0.055em;
-}
-
-.achievements-tagline {
-  grid-column: 1 / -1;
-  justify-self: center;
-  margin-top: 20px;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: clamp(12px, 1.5vw, 17px);
-  font-weight: 600;
-  letter-spacing: 0.08em;
 }
 
 .achievements-carousel-wrap {
@@ -3368,16 +3337,14 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   }
 
   .achievements-heading {
-    min-height: 210px;
+    min-height: 170px;
     margin-top: 42px;
-    column-gap: 14px;
-    padding: 36px 20px;
-    border-radius: 24px;
+    gap: 12px;
+    padding: 18px 4px;
   }
 
-  .achievements-heading p { font-size: clamp(27px, 8vw, 40px); }
-  .achievements-heading h1 { padding-left: 14px; font-size: clamp(34px, 10vw, 48px); }
-  .achievements-tagline { margin-top: 16px; font-size: 11px; letter-spacing: 0.05em; }
+  .achievements-heading p { font-size: clamp(25px, 7.6vw, 38px); }
+  .achievements-heading h1 { padding-left: 12px; font-size: clamp(32px, 9vw, 46px); }
 
   .achievements-carousel-wrap { height: 430px !important; margin-top: 52px; }
 }
