@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ScrollRevealText from "../ScrollRevealText";
 import SiteHeader from "../SiteHeader";
 import WorkShowcase from "../WorkShowcase";
 
@@ -18,6 +19,9 @@ export default function WorksPage() {
             <p>PORTFOLIO</p>
             <h1 id="works-title">作品集</h1>
           </div>
+          <ScrollRevealText className="works-intro-reveal">
+            用 AI 放大创意， 用作品呈现真实的思考、 执行与结果。
+          </ScrollRevealText>
         </div>
       </section>
       <WorkShowcase />
