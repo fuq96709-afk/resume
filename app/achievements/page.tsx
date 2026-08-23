@@ -17,7 +17,6 @@ export default function AchievementsPage() {
       <section className="achievements-shell">
         <Link className="achievements-back" href="/#about">← 返回关于我</Link>
         <div className="achievements-heading">
-          <div className="achievements-kicker"><span>AIGC MILESTONES · 2026</span></div>
           <div className="achievements-title-row">
             <p>ACHIEVEMENTS</p>
             <h1>成就</h1>
@@ -33,7 +32,6 @@ export default function AchievementsPage() {
 
       <section className="project-collection-section" id="projects" aria-labelledby="project-collection-title">
         <div className="project-collection-heading">
-          <span>CURATED AIGC WORKS · 2026</span>
           <div className="project-collection-title-row">
             <p>PORTFOLIO</p>
             <h2 id="project-collection-title">作品集</h2>
