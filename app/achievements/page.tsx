@@ -30,7 +30,6 @@ export default function AchievementsPage() {
         <div className="achievements-heading">
           <p>ACHIEVEMENTS</p>
           <h1>成就</h1>
-          <span className="achievements-tagline">让结果说话，让成长有迹可循</span>
         </div>
 
         <AchievementsCarousel />
