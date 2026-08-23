@@ -2912,6 +2912,7 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   font-size: 10px;
   font-weight: 720;
   letter-spacing: 0.12em;
+  text-align: center;
   text-transform: uppercase;
 }
 
