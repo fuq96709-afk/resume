@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CareerExperience from "./CareerExperience";
 import HomeEntry from "./HomeEntry";
+import HeroTiltedPortrait from "./HeroTiltedPortrait";
 import SiteHeader from "./SiteHeader";
 import WorkShowcase from "./WorkShowcase";
 
@@ -36,7 +37,7 @@ export default function Home() {
             data-cursor="About Me"
             data-cursor-icon="↗"
           >
-            <Image src="/portrait-web.png" alt="付沣的个人形象照" fill priority sizes="280px" />
+            <HeroTiltedPortrait />
           </a>
           <p className="hero-profile-meta">AI 视频创作 / AI 工作流实践</p>
           <a className="hero-cta" href="#contact" data-cursor="Contact" data-cursor-icon="↓">
