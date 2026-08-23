@@ -76,12 +76,10 @@ export default function Home() {
             <a className="footer-contact" href="tel:18129917940" data-cursor="Call" data-cursor-icon="↗">
               <span className="footer-contact-label">Phone / WeChat</span>
               <span className="footer-contact-value">18129917940</span>
-              <span className="footer-contact-arrow" aria-hidden="true">↗</span>
             </a>
             <a className="footer-contact" href="mailto:fuq97609@gmail.com" data-cursor="Email" data-cursor-icon="↗">
               <span className="footer-contact-label">Email</span>
               <span className="footer-contact-value">fuq97609@gmail.com</span>
-              <span className="footer-contact-arrow" aria-hidden="true">↗</span>
             </a>
           </div>
 
