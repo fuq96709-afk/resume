@@ -34,6 +34,13 @@ export default function AchievementsPage() {
 
         <AchievementsCarousel />
       </section>
+
+      <section className="project-collection-section" id="projects" aria-labelledby="project-collection-title">
+        <div className="project-collection-heading">
+          <p>Project Collection</p>
+          <h2 id="project-collection-title">项目集</h2>
+        </div>
+      </section>
     </main>
   );
 }
