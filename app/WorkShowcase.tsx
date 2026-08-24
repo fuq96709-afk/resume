@@ -109,8 +109,9 @@ export default function WorkShowcase() {
         <div className="work-sop-copy">
           <header className="work-sop-heading">
             <h2>SELECTED<br />WORKS</h2>
+            <p className="work-sop-label">TikTok AI 视频制作 SOP</p>
             <ScrollRevealText className="work-scroll-reveal">
-              TikTok AI视频制作 SOP，从产品分析、创意策划到AI生成与视频优化，建立完整的AI短视频生产流程，提高内容生产效率。
+              从产品分析、创意策划到 AI 生成与视频优化，建立完整的 AI 短视频生产流程，提高内容生产效率。
             </ScrollRevealText>
           </header>
 

@@ -537,6 +537,14 @@
   line-height: 1.75;
 }
 
+.work-sop-heading .work-sop-label {
+  margin-top: 24px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
 .sop-steps {
   border-top: 1px solid rgba(32, 33, 36, 0.12);
 }
@@ -892,7 +900,7 @@ html {
 
 .work-sop-heading h2.work-scroll-reveal {
   max-width: 610px;
-  margin: 24px 0 0;
+  margin: 8px 0 0;
   color: var(--muted);
   font-family: inherit;
   font-size: inherit;
