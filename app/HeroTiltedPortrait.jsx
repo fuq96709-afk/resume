@@ -7,7 +7,6 @@ export default function HeroTiltedPortrait() {
     <TiltedCard
       imageSrc="/portrait-web.png"
       altText="付沣的个人形象照"
-      captionText="付沣 · AIGC 视频创作者"
       containerHeight="100%"
       containerWidth="100%"
       imageHeight="100%"
@@ -15,7 +14,7 @@ export default function HeroTiltedPortrait() {
       rotateAmplitude={12}
       scaleOnHover={1.2}
       showMobileWarning={false}
-      showTooltip={true}
+      showTooltip={false}
       displayOverlayContent={true}
       overlayContent={
         <p className="hero-tilted-overlay-text">
