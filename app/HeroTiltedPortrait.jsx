@@ -15,12 +15,6 @@ export default function HeroTiltedPortrait() {
       scaleOnHover={1.2}
       showMobileWarning={false}
       showTooltip={false}
-      displayOverlayContent={true}
-      overlayContent={
-        <p className="hero-tilted-overlay-text">
-          FU FENG <span>AIGC CREATOR</span>
-        </p>
-      }
     />
   );
 }
