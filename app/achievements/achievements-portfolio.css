@@ -5,13 +5,8 @@
   margin: clamp(28px, 3.5vw, 42px) auto 0;
 }
 
-.achievements-page .achievements-shell {
-  padding-top: 138px;
-}
-
 .achievements-page .project-collection-section {
-  scroll-margin-top: 104px;
-  padding-top: clamp(130px, 14vw, 170px);
+  scroll-margin-top: 84px;
 }
 
 .achievements-page .project-collection-title-row p {
@@ -99,13 +94,8 @@
 @media (max-width: 720px) {
   .achievement-portfolio-content { margin-top: 24px; }
 
-  .achievements-page .achievements-shell {
-    padding-top: 122px;
-  }
-
   .achievements-page .project-collection-section {
-    scroll-margin-top: 92px;
-    padding-top: 116px;
+    scroll-margin-top: 76px;
   }
 
   .achievements-page .project-collection-title-row p {
