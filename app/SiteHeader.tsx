@@ -16,7 +16,7 @@ export default function SiteHeader({ activeItem }: SiteHeaderProps) {
             <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/works">作品</Link>
             <div className="nav-work-dropdown" aria-label="作品子菜单">
               <Link href="/achievements">成就</Link>
-              <Link href="/works">更多作品</Link>
+              <Link href="/achievements#projects">更多作品</Link>
             </div>
           </div>
         </div>
