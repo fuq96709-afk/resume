@@ -2,7 +2,15 @@
   position: relative;
   z-index: 2;
   width: min(1120px, 100%);
-  margin: clamp(42px, 6vw, 72px) auto 0;
+  margin: clamp(28px, 3.5vw, 42px) auto 0;
+}
+
+.achievements-page .project-collection-title-row p {
+  font-size: clamp(36px, 5vw, 64px);
+}
+
+.achievements-page .project-collection-title-row h2 {
+  font-size: clamp(40px, 5.5vw, 72px);
 }
 
 .achievement-filter-tabs {
@@ -51,7 +59,15 @@
 }
 
 @media (max-width: 720px) {
-  .achievement-portfolio-content { margin-top: 34px; }
+  .achievement-portfolio-content { margin-top: 24px; }
+
+  .achievements-page .project-collection-title-row p {
+    font-size: clamp(27px, 7.5vw, 36px);
+  }
+
+  .achievements-page .project-collection-title-row h2 {
+    font-size: clamp(30px, 8.2vw, 40px);
+  }
 
   .achievement-filter-tabs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
