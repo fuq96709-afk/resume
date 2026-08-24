@@ -229,20 +229,26 @@
 .career-timeline-block { margin-top: 128px; }
 
 .career-timeline-scroller {
-  overflow-x: auto;
+  width: 100%;
+  overflow: hidden;
   padding: 8px 4px 18px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(242, 100, 68, 0.48) rgba(32, 33, 36, 0.06);
+  scrollbar-width: none;
 }
 
-.career-timeline-scroller::-webkit-scrollbar { height: 7px; }
-.career-timeline-scroller::-webkit-scrollbar-track {
-  border-radius: 999px;
-  background: rgba(32, 33, 36, 0.06);
+.career-timeline-scroller::-webkit-scrollbar {
+  display: none;
 }
-.career-timeline-scroller::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(242, 100, 68, 0.48);
+
+.career-timeline-marquee {
+  --timeline-x: 0px;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: career-timeline-loop 42s linear infinite;
+}
+
+.career-timeline-scroller:hover .career-timeline-marquee {
+  animation-play-state: paused;
 }
 
 .career-subheading {
@@ -269,14 +275,20 @@
 }
 
 .career-timeline {
-  --timeline-x: 0px;
   position: relative;
   display: grid;
+  width: 1300px;
+  flex: 0 0 1300px;
   grid-template-columns: repeat(5, minmax(240px, 1fr));
   align-items: start;
   min-width: 1300px;
   gap: 14px;
   padding-top: 35px;
+}
+
+@keyframes career-timeline-loop {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 .career-timeline::before,
@@ -481,6 +493,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .career-timeline-marquee {
+    animation: none;
+  }
+
   .career-portrait,
   .career-portrait img,
   .career-timeline-item,
