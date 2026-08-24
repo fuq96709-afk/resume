@@ -31,25 +31,13 @@ const items: PortfolioItem[] = [
 ];
 
 function InfiniteMenu({ items: visibleItems }: { items: PortfolioItem[] }) {
-  const loopItems = [...visibleItems, ...visibleItems];
-
   return (
-    <div className="achievement-infinite-menu" style={{ height: 420 }} aria-live="polite">
-      <div className="achievement-infinite-menu-track">
-        {loopItems.map((item, index) => (
-          <article className="achievement-menu-card" key={`${item.id}-${index}`}>
-            <div className="achievement-menu-placeholder" aria-hidden="true">
-              <span>{String((index % visibleItems.length) + 1).padStart(2, "0")}</span>
-            </div>
-            <div className="achievement-menu-copy">
-              <span>{item.label}</span>
-              <strong>{item.title}</strong>
-              <small>内容待添加</small>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
+    <div
+      className="achievement-infinite-menu"
+      style={{ height: 420 }}
+      data-item-count={visibleItems.length}
+      aria-label="作品展示区域"
+    />
   );
 }
 
