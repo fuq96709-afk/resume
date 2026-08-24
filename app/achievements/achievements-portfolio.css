@@ -13,6 +13,35 @@
   font-size: clamp(40px, 5.5vw, 72px);
 }
 
+.achievements-page .achievements-heading {
+  margin-top: 12px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+
+.achievements-page .achievements-heading p,
+.achievements-page .achievements-heading h1 {
+  font-size: clamp(38px, 5.7vw, 72px);
+}
+
+.achievements-page .achievements-intro-reveal {
+  display: grid;
+  width: 100%;
+  max-width: 760px;
+  justify-items: center;
+  margin: 12px auto 0;
+  text-align: center;
+}
+
+.achievements-page .achievements-intro-reveal .site-scroll-reveal-text {
+  width: 100%;
+  text-align: center;
+}
+
+.achievements-page .achievements-carousel-wrap {
+  margin-top: 20px;
+}
+
 .achievement-filter-tabs {
   display: grid;
   grid-template-columns: repeat(4, minmax(118px, 1fr));
@@ -67,6 +96,19 @@
 
   .achievements-page .project-collection-title-row h2 {
     font-size: clamp(30px, 8.2vw, 40px);
+  }
+
+  .achievements-page .achievements-heading p,
+  .achievements-page .achievements-heading h1 {
+    font-size: clamp(29px, 7.2vw, 36px);
+  }
+
+  .achievements-page .achievements-intro-reveal {
+    margin-top: 9px;
+  }
+
+  .achievements-page .achievements-carousel-wrap {
+    margin-top: 16px;
   }
 
   .achievement-filter-tabs {
