@@ -1159,8 +1159,8 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 }
 
 .nav-actions {
-  position: fixed;
-  top: 22px;
+  position: absolute;
+  top: 0;
   right: clamp(16px, 3vw, 40px);
   display: flex;
   align-items: center;
