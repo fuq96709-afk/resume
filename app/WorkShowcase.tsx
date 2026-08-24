@@ -110,7 +110,7 @@ export default function WorkShowcase() {
           <header className="work-sop-heading">
             <h2>SELECTED<br />WORKS</h2>
             <ScrollRevealText className="work-scroll-reveal">
-              先找对方向， 再让 AI 提高制作效率。 每一步都以真实产品、 合规表达和数据结果为判断标准。
+              TikTok AI视频制作 SOP，从产品分析、创意策划到AI生成与视频优化，建立完整的AI短视频生产流程，提高内容生产效率。
             </ScrollRevealText>
           </header>
 
