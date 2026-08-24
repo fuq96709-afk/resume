@@ -119,46 +119,50 @@ export default function CareerExperience() {
             <span>CAREER PATH</span>
             <h3>工作经历</h3>
           </div>
-          <div className="career-timeline-scroller w-full overflow-x-auto pb-4">
-            <div className="career-timeline" onPointerMove={updateTimelinePointer}>
-              {experiences.map((experience, index) => {
-                const isHovered = hoveredExperience === index;
+          <div className="career-timeline-scroller">
+            <div className="career-timeline-marquee" onPointerMove={updateTimelinePointer}>
+              {[0, 1].map((groupIndex) => (
+                <div className="career-timeline" aria-hidden={groupIndex === 1} key={groupIndex}>
+                  {experiences.map((experience, index) => {
+                    const isHovered = hoveredExperience === index;
 
-                return (
-                  <motion.article
-                    className="career-timeline-item relative w-full rounded-[20px] bg-white px-[22px] py-[26px] text-left"
-                    key={`${experience.date}-${experience.company}`}
-                    initial={false}
-                    animate={{ y: isHovered && !shouldReduceMotion ? -8 : 0 }}
-                    transition={{ type: "spring", stiffness: 340, damping: 28, mass: 0.75 }}
-                    onHoverStart={() => setHoveredExperience(index)}
-                    onHoverEnd={() => setHoveredExperience(null)}
-                  >
-                  <span className="career-node" aria-hidden="true" />
-                  <time>{experience.date}</time>
-                  <span className="career-company">{experience.company}</span>
-                  <strong className="career-role">{experience.role}</strong>
-                    <AnimatePresence initial={false}>
-                      {isHovered && (
-                        <motion.div
-                          className="career-timeline-details"
-                          key="details"
-                          initial={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0, y: 10 }}
-                          animate={{ height: "auto", opacity: 1, y: 0 }}
-                          exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0, y: 8 }}
-                          transition={{
-                            height: { duration: shouldReduceMotion ? 0 : 0.36, ease: [0.16, 1, 0.3, 1] },
-                            opacity: { duration: shouldReduceMotion ? 0 : 0.2 },
-                            y: { duration: shouldReduceMotion ? 0 : 0.3, ease: [0.16, 1, 0.3, 1] },
-                          }}
-                        >
-                          <p>{experience.body}</p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.article>
-                );
-              })}
+                    return (
+                      <motion.article
+                        className="career-timeline-item relative w-full rounded-[20px] bg-white px-[22px] py-[26px] text-left"
+                        key={`${groupIndex}-${experience.date}-${experience.company}`}
+                        initial={false}
+                        animate={{ y: isHovered && !shouldReduceMotion ? -8 : 0 }}
+                        transition={{ type: "spring", stiffness: 340, damping: 28, mass: 0.75 }}
+                        onHoverStart={() => setHoveredExperience(index)}
+                        onHoverEnd={() => setHoveredExperience(null)}
+                      >
+                      <span className="career-node" aria-hidden="true" />
+                      <time>{experience.date}</time>
+                      <span className="career-company">{experience.company}</span>
+                      <strong className="career-role">{experience.role}</strong>
+                        <AnimatePresence initial={false}>
+                          {isHovered && (
+                            <motion.div
+                              className="career-timeline-details"
+                              key="details"
+                              initial={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0, y: 10 }}
+                              animate={{ height: "auto", opacity: 1, y: 0 }}
+                              exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0, y: 8 }}
+                              transition={{
+                                height: { duration: shouldReduceMotion ? 0 : 0.36, ease: [0.16, 1, 0.3, 1] },
+                                opacity: { duration: shouldReduceMotion ? 0 : 0.2 },
+                                y: { duration: shouldReduceMotion ? 0 : 0.3, ease: [0.16, 1, 0.3, 1] },
+                              }}
+                            >
+                              <p>{experience.body}</p>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.article>
+                    );
+                  })}
+                </div>
+              ))}
             </div>
           </div>
         </div>
