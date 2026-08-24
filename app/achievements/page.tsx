@@ -3,6 +3,7 @@ import Link from "next/link";
 import ScrollRevealText from "../ScrollRevealText";
 import SiteHeader from "../SiteHeader";
 import AchievementsCarousel from "./AchievementsCarousel";
+import AchievementsPortfolio from "./AchievementsPortfolio";
 
 export const metadata: Metadata = {
   title: "成就 | 付沣 AIGC 视频作品集",
@@ -37,6 +38,7 @@ export default function AchievementsPage() {
             <h2 id="project-collection-title">作品集</h2>
           </div>
         </div>
+        <AchievementsPortfolio />
       </section>
     </main>
   );
