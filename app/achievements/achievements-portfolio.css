@@ -5,6 +5,15 @@
   margin: clamp(28px, 3.5vw, 42px) auto 0;
 }
 
+.achievements-page .achievements-shell {
+  padding-top: 138px;
+}
+
+.achievements-page .project-collection-section {
+  scroll-margin-top: 104px;
+  padding-top: clamp(130px, 14vw, 170px);
+}
+
 .achievements-page .project-collection-title-row p {
   font-size: clamp(36px, 5vw, 64px);
 }
@@ -89,6 +98,15 @@
 
 @media (max-width: 720px) {
   .achievement-portfolio-content { margin-top: 24px; }
+
+  .achievements-page .achievements-shell {
+    padding-top: 122px;
+  }
+
+  .achievements-page .project-collection-section {
+    scroll-margin-top: 92px;
+    padding-top: 116px;
+  }
 
   .achievements-page .project-collection-title-row p {
     font-size: clamp(27px, 7.5vw, 36px);
