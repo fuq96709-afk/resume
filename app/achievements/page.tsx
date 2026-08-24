@@ -24,7 +24,7 @@ export default function AchievementsPage() {
         </div>
 
         <ScrollRevealText className="achievements-intro-reveal">
-          从真实数据出发， 记录每一次创作、 验证与成长。
+          记录TikTok AI视频制作过程中的真实数据表现与作品成果
         </ScrollRevealText>
 
         <AchievementsCarousel />
