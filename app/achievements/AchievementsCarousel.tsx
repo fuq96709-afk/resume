@@ -18,7 +18,7 @@ const items = [
 
 export default function AchievementsCarousel() {
   return (
-    <div className="achievements-carousel-wrap" style={{ height: "500px", position: "relative" }}>
+    <div className="achievements-carousel-wrap">
       <DepthCarousel
         items={items}
         depth={220}

@@ -910,16 +910,16 @@ html {
 }
 
 .achievements-intro-reveal {
-  max-width: 760px;
-  margin: 10px auto 0;
+  max-width: 680px;
+  margin: 4px auto 0;
   text-align: center;
 }
 
 .achievements-intro-reveal .site-scroll-reveal-text {
   color: #4f5259;
-  font-size: clamp(18px, 2.2vw, 28px);
-  font-weight: 620;
-  line-height: 1.55;
+  font-size: clamp(16px, 1.65vw, 21px);
+  font-weight: 580;
+  line-height: 1.48;
 }
 
 .works-intro-reveal {
@@ -1109,8 +1109,7 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 .nav-work-dropdown a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  justify-content: flex-start;
   padding: 11px 12px;
   border-radius: 10px;
   color: #4f5157;
@@ -1122,13 +1121,6 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   color: var(--accent-strong);
   background: rgba(241, 102, 69, 0.08);
 }
-
-.nav-work-dropdown a span:last-child {
-  color: var(--accent-strong);
-  transition: transform 180ms ease;
-}
-
-.nav-work-dropdown a:hover span:last-child { transform: translateX(3px); }
 
 .nav-actions {
   position: fixed;
@@ -3415,6 +3407,7 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 
 .achievements-page {
   min-height: 100dvh;
+  overflow-x: clip;
   color: var(--ink);
   background:
     radial-gradient(circle at 88% 12%, rgba(98, 169, 238, 0.16), transparent 30%),
@@ -3424,8 +3417,9 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 
 .achievements-shell {
   width: min(1120px, calc(100% - 48px));
+  min-height: 100dvh;
   margin-inline: auto;
-  padding: 170px 0 100px;
+  padding: 104px 0 48px;
 }
 
 .achievements-back {
@@ -3445,13 +3439,12 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 .achievements-heading {
   position: relative;
   isolation: isolate;
-  min-height: clamp(240px, 28vw, 330px);
-  margin-top: 52px;
+  min-height: 0;
+  margin-top: 16px;
   display: grid;
   align-content: center;
   justify-items: center;
-  row-gap: 18px;
-  padding: 38px 20px 58px;
+  padding: 12px 20px 18px;
   color: transparent;
   background: transparent;
 }
@@ -3460,13 +3453,13 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   content: "";
   position: absolute;
   z-index: -1;
-  top: 52%;
+  top: 50%;
   left: 54%;
-  width: min(62vw, 620px);
-  height: 150px;
+  width: min(58vw, 560px);
+  height: 112px;
   border-radius: 50%;
   background: linear-gradient(90deg, rgba(241, 102, 69, 0.18), rgba(103, 174, 232, 0.2));
-  filter: blur(54px);
+  filter: blur(46px);
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -3499,16 +3492,18 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   border-left: 2px solid rgba(32, 33, 36, 0.68);
   color: var(--accent-strong);
   -webkit-text-stroke: 0;
-  font-size: clamp(54px, 7.8vw, 106px);
-  font-weight: 760;
+  font-size: clamp(46px, 7vw, 96px);
+  font-weight: 720;
   line-height: 0.96;
   letter-spacing: -0.055em;
   text-shadow: 0 16px 34px rgba(241, 102, 69, 0.18);
 }
 
 .achievements-carousel-wrap {
+  position: relative;
   width: 100%;
-  margin-top: 72px;
+  height: 420px;
+  margin-top: 18px;
 }
 
 .project-collection-section {
@@ -3606,21 +3601,22 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 
   .achievements-shell {
     width: calc(100% - 32px);
-    padding: 130px 0 72px;
+    padding: 104px 0 40px;
   }
 
   .achievements-heading {
-    min-height: 210px;
-    margin-top: 42px;
-    row-gap: 14px;
-    padding: 28px 4px 46px;
+    min-height: 0;
+    margin-top: 12px;
+    padding: 10px 4px 14px;
   }
 
   .achievements-title-row { gap: 9px; }
   .achievements-heading p { font-size: clamp(27px, 7.6vw, 38px); }
-  .achievements-heading h1 { padding-left: 10px; font-size: clamp(33px, 8.8vw, 44px); }
+  .achievements-heading h1 { padding-left: 10px; font-size: clamp(27px, 7.6vw, 38px); }
 
-  .achievements-carousel-wrap { height: 430px !important; margin-top: 52px; }
+  .achievements-intro-reveal { margin-top: 2px; }
+  .achievements-intro-reveal .site-scroll-reveal-text { font-size: 16px; line-height: 1.5; }
+  .achievements-carousel-wrap { height: 410px; margin-top: 12px; }
 
   .project-collection-section {
     padding: 86px 16px 72px;
