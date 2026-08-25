@@ -95,31 +95,15 @@
 .achievement-format-heading {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
   padding: 0 2px 16px;
   border-bottom: 1px solid rgba(32, 33, 36, 0.12);
 }
 
-.achievement-format-heading > div {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-}
-
-.achievement-format-heading span,
-.achievement-format-heading small {
+.achievement-format-heading span {
   color: #777b83;
   font-size: 11px;
   font-weight: 720;
   letter-spacing: 0.13em;
-}
-
-.achievement-format-heading h3 {
-  margin: 0;
-  color: #202124;
-  font-size: clamp(22px, 2.5vw, 30px);
-  line-height: 1;
 }
 
 .achievement-card-grid {
@@ -350,10 +334,7 @@
   .achievement-filter-tabs button { min-height: 42px; padding-inline: 10px; font-size: 12px; }
   .achievement-portfolio-groups { gap: 46px; margin-top: 32px; }
   .achievement-format-heading { padding-bottom: 13px; }
-  .achievement-format-heading > div { gap: 10px; }
-  .achievement-format-heading h3 { font-size: 21px; }
-  .achievement-format-heading span,
-  .achievement-format-heading small { font-size: 9px; }
+  .achievement-format-heading span { font-size: 9px; }
   .achievement-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 14px; margin-top: 20px; }
   .achievement-card-grid.is-landscape { grid-template-columns: 1fr; gap: 24px; }
   .achievement-card-cover { border-radius: 15px; }

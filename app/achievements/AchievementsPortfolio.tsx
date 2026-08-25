@@ -85,11 +85,7 @@ function PortfolioGroup({ title, items: groupItems, orientation, onOpen, showHea
     <section className={`achievement-format-group is-${orientation}`} aria-label={title}>
       {showHeading && (
         <header className="achievement-format-heading">
-          <div>
-            <span>{orientation === "portrait" ? "PORTRAIT" : "LANDSCAPE"}</span>
-            <h3>{title}</h3>
-          </div>
-          <small>{String(groupItems.length).padStart(2, "0")} 个作品</small>
+          <span>{orientation === "portrait" ? "PORTRAIT" : "LANDSCAPE"}</span>
         </header>
       )}
       <PortfolioGrid visibleItems={groupItems} orientation={orientation} onOpen={onOpen} />
