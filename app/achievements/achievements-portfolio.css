@@ -204,8 +204,6 @@
 }
 
 .achievement-card-copy {
-  display: grid;
-  gap: 5px;
   padding-inline: 2px;
 }
 
@@ -216,12 +214,6 @@
   line-height: 1.35;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.achievement-card-copy > span {
-  color: #6f737b;
-  font-size: 12px;
-  line-height: 1.4;
 }
 
 .achievement-modal-backdrop {
@@ -340,7 +332,6 @@
   .achievement-card-cover { border-radius: 15px; }
   .achievement-play-mark { right: 10px; bottom: 10px; width: 38px; opacity: 1; transform: none; }
   .achievement-card-copy strong { font-size: 13px; }
-  .achievement-card-copy > span { font-size: 11px; }
   .achievement-modal-backdrop { padding: 12px; }
   .achievement-modal { width: min(100%, 520px); max-height: calc(100dvh - 24px); padding: 12px; border-radius: 18px; }
   .achievement-modal-empty { min-height: 60dvh; }

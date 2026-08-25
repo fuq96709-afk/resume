@@ -70,7 +70,6 @@ function PortfolioGrid({ visibleItems, orientation, onOpen }: { visibleItems: Po
           </span>
           <span className="achievement-card-copy">
             <strong>{item.title}</strong>
-            <span>{categoryLabel(item.category)}</span>
           </span>
         </button>
       ))}
