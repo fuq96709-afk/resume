@@ -61,7 +61,7 @@ export default function SiteHeader({ activeItem }: SiteHeaderProps) {
           <Link href="/#about">关于我</Link>
           <Link href="/#career">工作经历</Link>
           <div className="nav-work-menu">
-            <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/works">作品</Link>
+            <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/#work">作品</Link>
             <div className="nav-work-dropdown" aria-label="作品子菜单">
               <Link href="/achievements">成就</Link>
               <Link href="/achievements#projects">更多作品</Link>

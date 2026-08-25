@@ -2736,7 +2736,8 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
     width: 210px;
     height: 210px;
     border-radius: 44px;
-    transform: translateX(-50%);
+    translate: -50% 0;
+    transform: none;
   }
 
   .hero-profile-card .tilted-card-inner,

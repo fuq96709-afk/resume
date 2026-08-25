@@ -31,13 +31,14 @@ export default function AchievementsPage() {
         <AchievementsCarousel />
       </section>
 
-      <section className="project-collection-section" id="projects" aria-labelledby="project-collection-title">
-        <div className="project-collection-heading">
+      <section className="project-collection-section" id="projects" aria-labelledby="portfolio-title">
+        <header className="project-collection-heading">
           <div className="project-collection-title-row">
             <p>PORTFOLIO</p>
-            <h2 id="project-collection-title">作品集</h2>
+            <h2 id="portfolio-title">作品集</h2>
           </div>
-        </div>
+        </header>
+
         <AchievementsPortfolio />
       </section>
     </main>

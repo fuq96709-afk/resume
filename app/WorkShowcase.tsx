@@ -163,7 +163,7 @@ export default function WorkShowcase() {
                 <span>{String(activeVideo + 1).padStart(2, "0")} / {String(videos.length).padStart(2, "0")}</span>
                 <strong>{videos[activeVideo].title}</strong>
               </div>
-              <a className="video-more-link" href="/achievements">更多作品</a>
+              <a className="video-more-link" href="/achievements#projects">更多作品</a>
               <button type="button" onClick={() => selectVideo(activeVideo + 1)} aria-label="下一支视频">→</button>
             </div>
           </div>
