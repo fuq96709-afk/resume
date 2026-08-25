@@ -63,8 +63,8 @@ function PortfolioGrid({ visibleItems, orientation, onOpen }: { visibleItems: Po
   return (
     <div className={`achievement-card-grid is-${orientation}`} aria-live="polite">
       {visibleItems.map((item, index) => (
-        <button className="achievement-card" type="button" key={item.id} onClick={() => onOpen(item)} aria-label={`播放 ${item.title}`}>
-          <span className={`achievement-card-cover is-${orientation} ${item.thumbnail ? "has-image" : "is-placeholder"}`}>
+        <button className="achievement-card" type="button" key={item.id} onClick={() => onOpen(item)} aria-label={`播放 ${item.title}`} data-motion-card>
+          <span className={`achievement-card-cover is-${orientation} ${item.thumbnail ? "has-image" : "is-placeholder"}`} data-motion-image>
             {item.thumbnail ? <img src={item.thumbnail} alt="" loading="lazy" /> : <span className="achievement-placeholder-mark" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>}
             <span className="achievement-play-mark" aria-hidden="true">▶</span>
           </span>
@@ -81,7 +81,7 @@ function PortfolioGroup({ title, items: groupItems, orientation, onOpen, showHea
   if (groupItems.length === 0) return null;
 
   return (
-    <section className={`achievement-format-group is-${orientation}`} aria-label={title}>
+    <section className={`achievement-format-group is-${orientation}`} aria-label={title} data-motion-group>
       {showHeading && (
         <header className="achievement-format-heading">
           <span>{orientation === "portrait" ? "PORTRAIT" : "LANDSCAPE"}</span>
@@ -115,9 +115,9 @@ export default function AchievementsPortfolio() {
 
   return (
     <div className="achievement-portfolio-content">
-      <div className="achievement-filter-tabs" role="tablist" aria-label="作品分类">
+      <div className="achievement-filter-tabs" role="tablist" aria-label="作品分类" data-motion-group>
         {tabs.map((tab) => (
-          <button type="button" role="tab" aria-selected={activeCategory === tab.value} className={activeCategory === tab.value ? "is-active" : ""} key={tab.value} onClick={() => setActiveCategory(tab.value)}>
+          <button type="button" role="tab" aria-selected={activeCategory === tab.value} className={activeCategory === tab.value ? "is-active" : ""} key={tab.value} onClick={() => setActiveCategory(tab.value)} data-motion-card>
             {tab.label}
           </button>
         ))}

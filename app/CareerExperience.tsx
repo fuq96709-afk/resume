@@ -71,21 +71,22 @@ export default function CareerExperience() {
   return (
     <section className="career-page" id="about">
       <div className="career-shell">
-        <header className="career-title">
-          <h2>ABOUT ME</h2>
+        <header className="career-title" data-motion-group>
+          <h2 data-motion-heading>ABOUT ME</h2>
           <p>关于我</p>
         </header>
 
-        <div className="career-intro">
+        <div className="career-intro" data-motion-group>
           <figure
             className="career-portrait"
+            data-motion-image
             onPointerMove={setPointerVariables}
             onPointerLeave={resetTilt}
           >
             <Image src="/career-workspace.png" alt="付沣在创作工作台前的工作场景" fill sizes="(max-width: 760px) 100vw, 420px" />
           </figure>
 
-          <div className="career-profile">
+          <div className="career-profile" data-motion-card>
             <div className="career-summary">
               <ScrollRevealText className="career-scroll-reveal">
                 我是 2026 届本科毕业生， 但我的职业经历比校园生活开始得更早。 过去几年的工作经历， 让我更早接触真实的业务环境， 也让我养成了持续学习和主动解决问题的习惯。
@@ -114,10 +115,10 @@ export default function CareerExperience() {
           </div>
         </div>
 
-        <div className="career-timeline-block" id="career">
+        <div className="career-timeline-block" id="career" data-motion-group>
           <div className="career-subheading">
             <span>CAREER PATH</span>
-            <h3>工作经历</h3>
+            <h3 data-motion-heading>工作经历</h3>
           </div>
           <div className="career-timeline-scroller">
             <div className="career-timeline-marquee" onPointerMove={updateTimelinePointer}>
@@ -129,6 +130,8 @@ export default function CareerExperience() {
                     return (
                       <motion.article
                         className="career-timeline-item relative w-full rounded-[20px] bg-white px-[22px] py-[26px] text-left"
+                        data-motion-card
+                        data-motion-clip-only
                         key={`${groupIndex}-${experience.date}-${experience.company}`}
                         initial={false}
                         animate={{ y: isHovered && !shouldReduceMotion ? -8 : 0 }}

@@ -17,7 +17,7 @@ export default function Home() {
       <HomeEntry />
       <SiteHeader activeItem="home" />
 
-      <section className="hero" id="home">
+      <section className="hero" id="home" data-motion-hero>
         <div className="hero-stage">
           <div className="hero-marquee" aria-hidden="true">
             <div className="hero-marquee-track">
@@ -57,15 +57,15 @@ export default function Home() {
 
       <WorkShowcase />
 
-      <footer className="portfolio-footer" id="contact">
+      <footer className="portfolio-footer" id="contact" data-motion-group>
         <div className="portfolio-footer-inner">
           <p className="footer-eyebrow">LET&apos;S CREATE SOMETHING MEANINGFUL</p>
-          <h2 className="footer-title">
+          <h2 className="footer-title" data-motion-heading>
             <span>让我们给这个世界</span>
             <span className="footer-title-outline">带点不一样的吧。</span>
           </h2>
 
-          <div className="footer-contacts" aria-label="联系方式">
+          <div className="footer-contacts" aria-label="联系方式" data-motion-card>
             <a className="footer-contact" href="tel:18129917940" data-cursor="Call" data-cursor-icon="↗">
               <span className="footer-contact-label">Phone / WeChat</span>
               <span className="footer-contact-value">18129917940</span>
@@ -76,7 +76,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="footer-bottom">
+          <div className="footer-bottom" data-motion-card>
             <p>© 2026 FU FENG</p>
             <a href="#home">返回顶部 ↑</a>
           </div>

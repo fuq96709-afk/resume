@@ -15,10 +15,10 @@ export default function AchievementsPage() {
     <main className="achievements-page">
       <SiteHeader />
 
-      <section className="achievements-shell">
+      <section className="achievements-shell" data-motion-group>
         <Link className="achievements-back" href="/#about">← 返回关于我</Link>
         <div className="achievements-heading">
-          <div className="achievements-title-row">
+          <div className="achievements-title-row" data-motion-heading>
             <p>ACHIEVEMENTS</p>
             <h1>成就</h1>
           </div>
@@ -32,8 +32,8 @@ export default function AchievementsPage() {
       </section>
 
       <section className="project-collection-section" id="projects" aria-labelledby="portfolio-title">
-        <header className="project-collection-heading">
-          <div className="project-collection-title-row">
+        <header className="project-collection-heading" data-motion-group>
+          <div className="project-collection-title-row" data-motion-heading>
             <p>PORTFOLIO</p>
             <h2 id="portfolio-title">作品集</h2>
           </div>

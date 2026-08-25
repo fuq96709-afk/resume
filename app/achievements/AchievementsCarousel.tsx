@@ -18,7 +18,7 @@ const items = [
 
 export default function AchievementsCarousel() {
   return (
-    <div className="achievements-carousel-wrap">
+    <div className="achievements-carousel-wrap" data-motion-card data-motion-clip-only>
       <DepthCarousel
         items={items}
         depth={220}

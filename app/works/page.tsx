@@ -12,9 +12,9 @@ export default function WorksPage() {
   return (
     <main className="works-page">
       <SiteHeader activeItem="works" />
-      <section className="project-collection-section works-route-hero" aria-labelledby="works-title">
+      <section className="project-collection-section works-route-hero" aria-labelledby="works-title" data-motion-group>
         <div className="project-collection-heading">
-          <div className="project-collection-title-row">
+          <div className="project-collection-title-row" data-motion-heading>
             <p>PORTFOLIO</p>
             <h1 id="works-title">作品集</h1>
           </div>

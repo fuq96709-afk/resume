@@ -106,9 +106,9 @@ export default function WorkShowcase() {
   return (
     <section className="work-sop" id="work" ref={sectionRef}>
       <div className="work-sop-shell">
-        <div className="work-sop-copy">
+        <div className="work-sop-copy" data-motion-group>
           <header className="work-sop-heading">
-            <h2>SELECTED<br />WORKS</h2>
+            <h2 data-motion-heading>SELECTED<br />WORKS</h2>
             <p className="work-sop-label">TikTok AI 视频制作 SOP</p>
             <ScrollRevealText className="work-scroll-reveal">
               从产品分析、创意策划到 AI 生成与视频优化，建立完整的 AI 短视频生产流程，提高内容生产效率。
@@ -117,7 +117,7 @@ export default function WorkShowcase() {
 
           <div className="sop-steps" aria-label="AI 短视频制作流程">
             {sopSteps.map((step, index) => (
-              <article className="sop-step" key={step.title}>
+              <article className="sop-step" key={step.title} data-motion-card>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <div>
                   <h3>{step.title}</h3>
@@ -128,8 +128,8 @@ export default function WorkShowcase() {
           </div>
         </div>
 
-        <div className="video-gallery-wrap">
-          <div className="video-gallery" aria-label="四支短视频作品轮播">
+        <div className="video-gallery-wrap" data-motion-group>
+          <div className="video-gallery" aria-label="四支短视频作品轮播" data-motion-card data-motion-clip-only>
             <div className="video-gallery-stage">
               {videos.map((video, index) => {
                 const offset = carouselOffset(index, activeVideo);
