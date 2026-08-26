@@ -67,8 +67,8 @@ function PortfolioGrid({ visibleItems, orientation, onOpen }: { visibleItems: Po
   return (
     <div className={`achievement-card-grid is-${orientation}`} aria-live="polite">
       {visibleItems.map((item, index) => (
-        <button className="achievement-card" type="button" key={item.id} onClick={() => onOpen(item)} aria-label={`播放 ${item.title}`} data-motion-card>
-          <span className={`achievement-card-cover is-${orientation} ${item.thumbnail ? "has-image" : "is-placeholder"}`} data-motion-image>
+        <button className="achievement-card" type="button" key={item.id} onClick={() => onOpen(item)} aria-label={`播放 ${item.title}`}>
+          <span className={`achievement-card-cover is-${orientation} ${item.thumbnail ? "has-image" : "is-placeholder"}`}>
             {item.thumbnail ? <img src={item.thumbnail} alt="" loading="lazy" /> : <span className="achievement-placeholder-mark" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>}
             <span className="achievement-play-mark" aria-hidden="true">▶</span>
           </span>
@@ -85,7 +85,7 @@ function PortfolioGroup({ title, items: groupItems, orientation, onOpen, showHea
   if (groupItems.length === 0) return null;
 
   return (
-    <section className={`achievement-format-group is-${orientation}`} aria-label={title} data-motion-group>
+    <section className={`achievement-format-group is-${orientation}`} aria-label={title}>
       {showHeading && (
         <header className="achievement-format-heading">
           <span>{orientation === "portrait" ? "PORTRAIT" : "LANDSCAPE"}</span>
@@ -106,35 +106,33 @@ export default function AchievementsPortfolio() {
   const landscapeItems = useMemo(() => filteredItems.filter((item) => itemOrientation(item) === "landscape"), [filteredItems]);
 
   useLayoutEffect(() => {
-    if (initialRender.current) {
-      initialRender.current = false;
-      return;
-    }
-
     const root = portfolioRef.current;
     if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const cards = Array.from(root.querySelectorAll<HTMLElement>(".achievement-card"));
     const context = gsap.context(() => {
-      gsap.fromTo(
-        cards,
-        {
-          autoAlpha: 0,
-          clipPath: "inset(5% 0 11% 0 round 18px)",
-          y: 34,
-          scale: 0.982,
-        },
-        {
-          autoAlpha: 1,
-          clipPath: "inset(0% 0 0% 0 round 0px)",
-          y: 0,
-          scale: 1,
-          duration: 0.78,
-          stagger: 0.045,
-          ease: "power4.out",
-          clearProps: "opacity,visibility,clipPath,transform",
-        },
-      );
+      gsap.set(cards, { clipPath: "inset(6% 0 12% 0 round 18px)", y: 24, scaleY: 0.96, transformOrigin: "50% 100%" });
+      const animateCards = () => gsap.to(cards, {
+        clipPath: "inset(0% 0 0% 0 round 0px)",
+        y: 0,
+        scaleY: 1,
+        duration: 0.8,
+        stagger: 0.05,
+        ease: "power4.out",
+        clearProps: "clipPath,transform,transformOrigin",
+      });
+
+      if (initialRender.current) {
+        initialRender.current = false;
+        ScrollTrigger.create({
+          trigger: root,
+          start: "top 86%",
+          once: true,
+          onEnter: animateCards,
+        });
+      } else {
+        animateCards();
+      }
     }, root);
 
     const refreshFrame = window.requestAnimationFrame(() => ScrollTrigger.refresh());

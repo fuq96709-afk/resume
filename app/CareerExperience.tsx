@@ -120,7 +120,7 @@ export default function CareerExperience() {
             <span>CAREER PATH</span>
             <h3 data-motion-heading>工作经历</h3>
           </div>
-          <div className="career-timeline-scroller">
+          <div className="career-timeline-scroller" data-motion-card data-motion-clip-only>
             <div className="career-timeline-marquee" onPointerMove={updateTimelinePointer}>
               {[0, 1].map((groupIndex) => (
                 <div className="career-timeline" aria-hidden={groupIndex === 1} key={groupIndex}>
@@ -130,8 +130,6 @@ export default function CareerExperience() {
                     return (
                       <motion.article
                         className="career-timeline-item relative w-full rounded-[20px] bg-white px-[22px] py-[26px] text-left"
-                        data-motion-card
-                        data-motion-clip-only
                         key={`${groupIndex}-${experience.date}-${experience.company}`}
                         initial={false}
                         animate={{ y: isHovered && !shouldReduceMotion ? -8 : 0 }}

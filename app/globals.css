@@ -915,7 +915,7 @@ html {
   line-height: 1.78;
 }
 
-.work-sop-heading h2.work-scroll-reveal {
+.work-sop-heading .work-scroll-reveal {
   max-width: 610px;
   margin: 8px 0 0;
   color: var(--muted);
@@ -2618,10 +2618,8 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 .hero-shape-cube { top: 420px; left: 740px; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-copy { animation: restored-copy-in 680ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-  .hero-profile-card { animation: restored-profile-in 760ms 80ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-  .hero-profile-meta,
-  .hero-cta { animation: restored-cta-in 720ms 180ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-copy h1 { animation: hero-title-mask-in 980ms 90ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-copy p { animation: hero-subtitle-mask-in 780ms 210ms cubic-bezier(0.16, 1, 0.3, 1) both; }
   .hero-shape-pyramid { animation: restored-float-pyramid 7.5s ease-in-out infinite; }
   .hero-shape-orb { animation: restored-float 8.5s -1.2s ease-in-out infinite; }
   .hero-shape-cylinder { animation: restored-float-cylinder 9s -2.4s ease-in-out infinite; }
@@ -2630,19 +2628,22 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   .hero-shape-cube { animation: restored-float 8.8s -4s ease-in-out infinite; }
 }
 
-@keyframes restored-copy-in {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes hero-title-mask-in {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(28px) scaleY(0.78);
+    transform-origin: 50% 100%;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0) scaleY(1);
+    transform-origin: 50% 100%;
+  }
 }
 
-@keyframes restored-profile-in {
-  from { opacity: 0; transform: translateY(24px) scale(0.94); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes restored-cta-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes hero-subtitle-mask-in {
+  from { clip-path: inset(0 100% 0 0); transform: translateX(-18px); }
+  to { clip-path: inset(0 0 0 0); transform: translateX(0); }
 }
 
 @keyframes restored-float {
@@ -3626,14 +3627,6 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   align-items: center;
   padding-top: 150px;
   padding-bottom: 110px;
-}
-
-/* GSAP owns the page entrance while active; decorative float loops remain untouched. */
-html.gsap-motion-active .hero-copy,
-html.gsap-motion-active .hero-profile-card,
-html.gsap-motion-active .hero-profile-meta,
-html.gsap-motion-active .hero-cta {
-  animation: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -20,8 +20,10 @@ function clearMotionStyles(root: ParentNode = document) {
 }
 
 function revealGroup(group: HTMLElement) {
-  const heading = group.querySelector<HTMLElement>("[data-motion-heading]");
-  const cards = Array.from(group.querySelectorAll<HTMLElement>("[data-motion-card]"));
+  const heading = Array.from(group.querySelectorAll<HTMLElement>("[data-motion-heading]"))
+    .find((item) => item.closest("[data-motion-group]") === group);
+  const cards = Array.from(group.querySelectorAll<HTMLElement>("[data-motion-card]"))
+    .filter((item) => item.closest("[data-motion-group]") === group);
   const trigger = heading ?? cards[0] ?? group;
   const isAchievementsGroup = Boolean(group.closest(".achievements-page"));
 
@@ -38,22 +40,14 @@ function revealGroup(group: HTMLElement) {
   });
 
   if (heading) {
-    timeline.fromTo(
+    gsap.set(
       heading,
       isAchievementsGroup
-        ? {
-            clipPath: "inset(0 100% 0 0)",
-            xPercent: -16,
-            scaleX: 0.88,
-            transformOrigin: "0% 50%",
-          }
-        : {
-            clipPath: "inset(0 0 100% 0)",
-            yPercent: 72,
-            scaleY: 0.76,
-            transformOrigin: "50% 100%",
-          },
-      {
+        ? { clipPath: "inset(0 100% 0 0)", xPercent: -16, scaleX: 0.88, transformOrigin: "0% 50%" }
+        : { clipPath: "inset(0 0 100% 0)", yPercent: 72, scaleY: 0.76, transformOrigin: "50% 100%" },
+    );
+
+    timeline.to(heading, {
         clipPath: "inset(0 0 0% 0)",
         xPercent: 0,
         yPercent: 0,
@@ -63,8 +57,7 @@ function revealGroup(group: HTMLElement) {
         duration: 1.18,
         ease: PREMIUM_EASE,
         clearProps: "clipPath,transform,transformOrigin",
-      },
-    );
+      });
   }
 
   if (cards.length > 0) {
@@ -72,30 +65,22 @@ function revealGroup(group: HTMLElement) {
 
     cards.forEach((card, index) => {
       const clipOnly = card.hasAttribute("data-motion-clip-only");
-      timeline.fromTo(
+      gsap.set(
         card,
         clipOnly
-          ? { autoAlpha: 0, clipPath: "inset(7% 0 13% 0 round 18px)" }
-          : { autoAlpha: 0, clipPath: "inset(7% 0 13% 0 round 18px)", y: 44, scale: 0.975 },
-        clipOnly
-          ? {
-              autoAlpha: 1,
-              clipPath: "inset(0% 0 0% 0 round 0px)",
-              immediateRender: false,
-              duration: 0.92,
-              ease: PREMIUM_EASE,
-              clearProps: "opacity,visibility,clipPath",
-            }
-          : {
-              autoAlpha: 1,
-              clipPath: "inset(0% 0 0% 0 round 0px)",
-              y: 0,
-              scale: 1,
-              immediateRender: false,
-              duration: 0.92,
-              ease: PREMIUM_EASE,
-              clearProps: "opacity,visibility,clipPath,transform",
-            },
+          ? { clipPath: "inset(7% 0 13% 0 round 18px)", scaleY: 0.96, transformOrigin: "50% 100%" }
+          : { clipPath: "inset(7% 0 13% 0 round 18px)", y: 38, scaleY: 0.96, transformOrigin: "50% 100%" },
+      );
+      timeline.to(
+        card,
+        {
+          clipPath: "inset(0% 0 0% 0 round 0px)",
+          y: clipOnly ? undefined : 0,
+          scaleY: 1,
+          duration: 0.92,
+          ease: PREMIUM_EASE,
+          clearProps: "clipPath,transform,transformOrigin",
+        },
         index === 0 ? startAt : "-=0.835",
       );
     });
@@ -106,12 +91,9 @@ function revealImages() {
   const imageFrames = Array.from(document.querySelectorAll<HTMLElement>("[data-motion-image]"));
 
   imageFrames.forEach((frame) => {
-    gsap.fromTo(
-      frame,
-      { clipPath: "inset(0 0 100% 0 round 24px)" },
-      {
+    gsap.set(frame, { clipPath: "inset(0 0 100% 0 round 24px)" });
+    gsap.to(frame, {
         clipPath: "inset(0 0 0% 0 round 24px)",
-        immediateRender: false,
         duration: 1.08,
         ease: PREMIUM_EASE,
         clearProps: "clipPath",
@@ -121,8 +103,7 @@ function revealImages() {
           toggleActions: "play none none none",
           invalidateOnRefresh: true,
         },
-      },
-    );
+      });
 
     const image = frame.querySelector<HTMLElement>("img");
     if (!image) return;
@@ -145,97 +126,6 @@ function revealImages() {
   });
 }
 
-function playHomeIntro() {
-  const hero = document.querySelector<HTMLElement>("[data-motion-hero]");
-  if (!hero) return;
-
-  const title = hero.querySelector<HTMLElement>(".hero-copy h1");
-  const subtitle = hero.querySelector<HTMLElement>(".hero-copy p");
-  const portrait = hero.querySelector<HTMLElement>(".hero-profile-card");
-  const meta = hero.querySelector<HTMLElement>(".hero-profile-meta");
-  const cta = hero.querySelector<HTMLElement>(".hero-cta");
-
-  const timeline = gsap.timeline({ defaults: { force3D: true } });
-
-  if (title) {
-    timeline.fromTo(
-      title,
-      {
-        clipPath: "inset(0 0 100% 0)",
-        yPercent: 70,
-        scaleX: 1.045,
-        scaleY: 0.7,
-        transformOrigin: "50% 100%",
-      },
-      {
-        clipPath: "inset(0 0 0% 0)",
-        yPercent: 0,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 1.34,
-        ease: PREMIUM_EASE,
-        clearProps: "clipPath,transform,transformOrigin",
-      },
-      0.12,
-    );
-  }
-
-  if (subtitle) {
-    timeline.fromTo(
-      subtitle,
-      { autoAlpha: 0, clipPath: "inset(0 100% 0 0)", x: -28 },
-      {
-        autoAlpha: 1,
-        clipPath: "inset(0 0% 0 0)",
-        x: 0,
-        duration: 0.88,
-        ease: PREMIUM_EASE,
-        clearProps: "opacity,visibility,clipPath,transform",
-      },
-      "-=0.72",
-    );
-  }
-
-  if (portrait) {
-    timeline.fromTo(
-      portrait,
-      {
-        autoAlpha: 0,
-        clipPath: "inset(0 0 100% 0 round 58px)",
-        y: 42,
-        scale: 0.93,
-      },
-      {
-        autoAlpha: 1,
-        clipPath: "inset(0 0 0% 0 round 58px)",
-        y: 0,
-        scale: 1,
-        duration: 1.18,
-        ease: PREMIUM_EASE,
-        clearProps: "opacity,visibility,clipPath,transform",
-      },
-      "-=0.58",
-    );
-  }
-
-  const supporting = [meta, cta].filter((item): item is HTMLElement => Boolean(item));
-  if (supporting.length > 0) {
-    timeline.fromTo(
-      supporting,
-      { autoAlpha: 0, clipPath: "inset(0 100% 0 0)" },
-      {
-        autoAlpha: 1,
-        clipPath: "inset(0 0% 0 0)",
-        duration: 0.84,
-        ease: PREMIUM_EASE,
-        stagger: 0.11,
-        clearProps: "opacity,visibility,clipPath",
-      },
-      "-=0.56",
-    );
-  }
-}
-
 export default function PortfolioMotion() {
   const pathname = usePathname();
 
@@ -250,7 +140,6 @@ export default function PortfolioMotion() {
       clearMotionStyles();
 
       const context = gsap.context(() => {
-        playHomeIntro();
         document.querySelectorAll<HTMLElement>("[data-motion-group]").forEach(revealGroup);
         revealImages();
       }, document.body);
