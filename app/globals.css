@@ -3635,6 +3635,11 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   }
 }
 
+[data-motion-image],
+[data-motion-clip-only] {
+  translate: 0 var(--motion-reveal-y, 0px);
+}
+
 @media (max-width: 680px) {
   .career-achievement-link {
     min-width: 86px;
@@ -3674,4 +3679,5 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   .project-collection-title-row h1 { padding-left: 11px; font-size: clamp(32px, 9vw, 44px); }
   .works-route-hero { min-height: 64dvh; padding-top: 130px; padding-bottom: 76px; }
 }
+
 
