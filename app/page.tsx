@@ -70,9 +70,9 @@ export default function Home() {
               <span className="footer-contact-label">Phone / WeChat</span>
               <span className="footer-contact-value">18129917940</span>
             </a>
-            <a className="footer-contact" href="mailto:fuq97609@gmail.com" data-cursor="Email" data-cursor-icon="↗">
+            <a className="footer-contact" href="mailto:fuq96709@gmail.com" data-cursor="Email" data-cursor-icon="↗">
               <span className="footer-contact-label">Email</span>
-              <span className="footer-contact-value">fuq97609@gmail.com</span>
+              <span className="footer-contact-value">fuq96709@gmail.com</span>
             </a>
           </div>
 
