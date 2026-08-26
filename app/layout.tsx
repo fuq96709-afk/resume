@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Onest, Public_Sans } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "./CustomCursor";
-import PortfolioMotion from "./PortfolioMotion";
 
 const onest = Onest({
   variable: "--font-onest",
@@ -29,7 +28,6 @@ export default function RootLayout({
     <html lang="zh-CN">
       <body className={`${onest.variable} ${publicSans.variable}`}>
         {children}
-        <PortfolioMotion />
         <CustomCursor />
       </body>
     </html>
