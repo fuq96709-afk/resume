@@ -8,6 +8,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const PREMIUM_EASE = "power4.out";
+const MOTION_TARGET_SELECTOR = "[data-motion-heading], [data-motion-card], [data-motion-image]";
+
+function clearMotionStyles(root: ParentNode = document) {
+  const targets = Array.from(root.querySelectorAll<HTMLElement>(MOTION_TARGET_SELECTOR));
+  if (targets.length === 0) return;
+
+  gsap.set(targets, {
+    clearProps: "opacity,visibility,clipPath,transform,transformOrigin",
+  });
+}
 
 function revealGroup(group: HTMLElement) {
   const heading = group.querySelector<HTMLElement>("[data-motion-heading]");
@@ -21,7 +31,7 @@ function revealGroup(group: HTMLElement) {
     scrollTrigger: {
       trigger,
       start: "top 84%",
-      once: true,
+      toggleActions: "play none none none",
       invalidateOnRefresh: true,
     },
   });
@@ -39,6 +49,7 @@ function revealGroup(group: HTMLElement) {
         clipPath: "inset(0 0 0% 0)",
         yPercent: 0,
         scaleY: 1,
+        immediateRender: false,
         duration: 1.18,
         ease: PREMIUM_EASE,
         clearProps: "clipPath,transform,transformOrigin",
@@ -60,6 +71,7 @@ function revealGroup(group: HTMLElement) {
           ? {
               autoAlpha: 1,
               clipPath: "inset(0% 0 0% 0 round 0px)",
+              immediateRender: false,
               duration: 0.92,
               ease: PREMIUM_EASE,
               clearProps: "opacity,visibility,clipPath",
@@ -69,6 +81,7 @@ function revealGroup(group: HTMLElement) {
               clipPath: "inset(0% 0 0% 0 round 0px)",
               y: 0,
               scale: 1,
+              immediateRender: false,
               duration: 0.92,
               ease: PREMIUM_EASE,
               clearProps: "opacity,visibility,clipPath,transform",
@@ -88,13 +101,14 @@ function revealImages() {
       { clipPath: "inset(0 0 100% 0 round 24px)" },
       {
         clipPath: "inset(0 0 0% 0 round 24px)",
+        immediateRender: false,
         duration: 1.08,
         ease: PREMIUM_EASE,
         clearProps: "clipPath",
         scrollTrigger: {
           trigger: frame,
           start: "top 88%",
-          once: true,
+          toggleActions: "play none none none",
           invalidateOnRefresh: true,
         },
       },
@@ -216,11 +230,14 @@ export default function PortfolioMotion() {
   const pathname = usePathname();
 
   useLayoutEffect(() => {
-    let refreshTimer: ReturnType<typeof setTimeout> | undefined;
+    const refreshTimers: Array<ReturnType<typeof setTimeout>> = [];
+    let refreshFrame: number | undefined;
+    let disposed = false;
     const media = gsap.matchMedia();
 
     media.add("(prefers-reduced-motion: no-preference)", () => {
       document.documentElement.classList.add("gsap-motion-active");
+      clearMotionStyles();
 
       const context = gsap.context(() => {
         playHomeIntro();
@@ -228,13 +245,27 @@ export default function PortfolioMotion() {
         revealImages();
       }, document.body);
 
-      const refresh = () => ScrollTrigger.refresh();
-      document.fonts?.ready.then(refresh).catch(() => undefined);
-      refreshTimer = setTimeout(refresh, 320);
+      const refresh = () => {
+        if (disposed) return;
+        ScrollTrigger.refresh();
+        ScrollTrigger.update();
+      };
+
+      const refreshAfterNavigation = () => {
+        if (disposed) return;
+        if (refreshFrame !== undefined) window.cancelAnimationFrame(refreshFrame);
+        refreshFrame = window.requestAnimationFrame(refresh);
+      };
+
+      document.fonts?.ready.then(refreshAfterNavigation).catch(() => undefined);
+      refreshTimers.push(setTimeout(refreshAfterNavigation, 360));
 
       return () => {
-        if (refreshTimer) clearTimeout(refreshTimer);
+        disposed = true;
+        refreshTimers.forEach(clearTimeout);
+        if (refreshFrame !== undefined) window.cancelAnimationFrame(refreshFrame);
         context.revert();
+        clearMotionStyles();
         document.documentElement.classList.remove("gsap-motion-active");
       };
     });
