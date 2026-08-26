@@ -1,7 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./achievements-portfolio.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Category = "all" | "tk" | "temu" | "demo";
 
@@ -95,9 +99,50 @@ function PortfolioGroup({ title, items: groupItems, orientation, onOpen, showHea
 export default function AchievementsPortfolio() {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
   const [activeItem, setActiveItem] = useState<PortfolioItem | null>(null);
+  const portfolioRef = useRef<HTMLDivElement>(null);
+  const initialRender = useRef(true);
   const filteredItems = useMemo(() => (activeCategory === "all" ? items : items.filter((item) => item.category === activeCategory)), [activeCategory]);
   const portraitItems = useMemo(() => filteredItems.filter((item) => itemOrientation(item) === "portrait"), [filteredItems]);
   const landscapeItems = useMemo(() => filteredItems.filter((item) => itemOrientation(item) === "landscape"), [filteredItems]);
+
+  useLayoutEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false;
+      return;
+    }
+
+    const root = portfolioRef.current;
+    if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const cards = Array.from(root.querySelectorAll<HTMLElement>(".achievement-card"));
+    const context = gsap.context(() => {
+      gsap.fromTo(
+        cards,
+        {
+          autoAlpha: 0,
+          clipPath: "inset(5% 0 11% 0 round 18px)",
+          y: 34,
+          scale: 0.982,
+        },
+        {
+          autoAlpha: 1,
+          clipPath: "inset(0% 0 0% 0 round 0px)",
+          y: 0,
+          scale: 1,
+          duration: 0.78,
+          stagger: 0.045,
+          ease: "power4.out",
+          clearProps: "opacity,visibility,clipPath,transform",
+        },
+      );
+    }, root);
+
+    const refreshFrame = window.requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => {
+      window.cancelAnimationFrame(refreshFrame);
+      context.revert();
+    };
+  }, [activeCategory]);
 
   useEffect(() => {
     if (!activeItem) return;
@@ -114,7 +159,7 @@ export default function AchievementsPortfolio() {
   }, [activeItem]);
 
   return (
-    <div className="achievement-portfolio-content">
+    <div className="achievement-portfolio-content" ref={portfolioRef}>
       <div className="achievement-filter-tabs" role="tablist" aria-label="作品分类" data-motion-group>
         {tabs.map((tab) => (
           <button type="button" role="tab" aria-selected={activeCategory === tab.value} className={activeCategory === tab.value ? "is-active" : ""} key={tab.value} onClick={() => setActiveCategory(tab.value)} data-motion-card>

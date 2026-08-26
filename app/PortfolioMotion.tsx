@@ -23,6 +23,7 @@ function revealGroup(group: HTMLElement) {
   const heading = group.querySelector<HTMLElement>("[data-motion-heading]");
   const cards = Array.from(group.querySelectorAll<HTMLElement>("[data-motion-card]"));
   const trigger = heading ?? cards[0] ?? group;
+  const isAchievementsGroup = Boolean(group.closest(".achievements-page"));
 
   if (!heading && cards.length === 0) return;
 
@@ -39,15 +40,24 @@ function revealGroup(group: HTMLElement) {
   if (heading) {
     timeline.fromTo(
       heading,
-      {
-        clipPath: "inset(0 0 100% 0)",
-        yPercent: 72,
-        scaleY: 0.76,
-        transformOrigin: "50% 100%",
-      },
+      isAchievementsGroup
+        ? {
+            clipPath: "inset(0 100% 0 0)",
+            xPercent: -16,
+            scaleX: 0.88,
+            transformOrigin: "0% 50%",
+          }
+        : {
+            clipPath: "inset(0 0 100% 0)",
+            yPercent: 72,
+            scaleY: 0.76,
+            transformOrigin: "50% 100%",
+          },
       {
         clipPath: "inset(0 0 0% 0)",
+        xPercent: 0,
         yPercent: 0,
+        scaleX: 1,
         scaleY: 1,
         immediateRender: false,
         duration: 1.18,
