@@ -145,7 +145,7 @@ export default function WorkShowcase() {
                       src={video.src}
                       muted
                       playsInline
-                      preload={offset === 0 ? "auto" : "metadata"}
+                      preload="none"
                       onEnded={() => handleEnded(index)}
                     />
                     <div className="video-card-caption">
