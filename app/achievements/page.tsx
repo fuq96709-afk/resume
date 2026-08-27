@@ -5,6 +5,7 @@ import SiteHeader from "../SiteHeader";
 import AchievementsCarousel from "./AchievementsCarousel";
 import AchievementsHashScroll from "./AchievementsHashScroll";
 import AchievementsPortfolio from "./AchievementsPortfolio";
+import AchievementsBackLink from "./AchievementsBackLink";
 
 export const metadata: Metadata = {
   title: "成就 | 付沣 AIGC 视频作品集",
@@ -18,7 +19,7 @@ export default function AchievementsPage() {
       <SiteHeader />
 
       <section className="achievements-shell" id="achievements" data-motion-group>
-        <Link className="achievements-back" href="/#about">← 返回关于我</Link>
+        <AchievementsBackLink />
         <div className="achievements-heading">
           <div className="achievements-title-row" data-motion-heading>
             <p>ACHIEVEMENTS</p>
