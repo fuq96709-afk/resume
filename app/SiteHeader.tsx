@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type SiteHeaderProps = {
   activeItem?: "home" | "works";
@@ -10,10 +10,33 @@ type SiteHeaderProps = {
 
 export default function SiteHeader({ activeItem }: SiteHeaderProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const [isHidden, setIsHidden] = useState(false);
   const lastScrollY = useRef(0);
   const frame = useRef<number | null>(null);
   const smartHideEnabled = pathname !== "/works";
+
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      const hashIndex = href.indexOf("#");
+      if (hashIndex === -1) return;
+      const hash = href.slice(hashIndex);
+
+      if (pathname === "/" || pathname === "") {
+        // On home page, scroll to the anchor
+        e.preventDefault();
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Navigate to home first, then scroll
+        e.preventDefault();
+        router.push("/" + hash);
+      }
+    },
+    [pathname, router],
+  );
 
   useEffect(() => {
     setIsHidden(false);
@@ -55,25 +78,25 @@ export default function SiteHeader({ activeItem }: SiteHeaderProps) {
 
   return (
     <header className={`site-header${smartHideEnabled ? " is-smart" : ""}${isHidden ? " is-hidden" : ""}`}>
-      <nav className="nav" aria-label="主导航">
-        <div className="nav-links">
-          <Link className={activeItem === "home" ? "is-active" : undefined} href="/#home">首页</Link>
-          <Link href="/#about">关于我</Link>
-          <Link href="/#career">工作经历</Link>
-          <div className="nav-work-menu">
-            <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/#work">作品</Link>
-            <div className="nav-work-dropdown" aria-label="作品子菜单">
-              <Link href="/achievements">成就</Link>
-              <Link href="/achievements#projects">更多作品</Link>
+          <nav className="nav" aria-label="主导航">
+            <div className="nav-links">
+              <Link className={activeItem === "home" ? "is-active" : undefined} href="/#home" scroll={false} onClick={(e) => handleAnchorClick(e, "/#home")}>首页</Link>
+                            <Link href="/#about" scroll={false} onClick={(e) => handleAnchorClick(e, "/#about")}>关于我</Link>
+                            <Link href="/#career" scroll={false} onClick={(e) => handleAnchorClick(e, "/#career")}>工作经历</Link>
+                            <div className="nav-work-menu">
+                              <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/#work" scroll={false} onClick={(e) => handleAnchorClick(e, "/#work")}>作品</Link>
+                <div className="nav-work-dropdown" aria-label="作品子菜单">
+                  <Link href="/achievements">成就</Link>
+                  <Link href="/achievements#projects">更多作品</Link>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="nav-actions" aria-label="快捷操作">
-          <Link className="nav-action nav-action-contact" href="/#contact">联系</Link>
-          <a className="nav-action nav-action-resume" href="/resume.pdf" target="_blank" rel="noreferrer">简历</a>
-        </div>
-      </nav>
-    </header>
+            <div className="nav-actions" aria-label="快捷操作">
+              <Link className="nav-action nav-action-contact" href="/#contact" scroll={false} onClick={(e) => handleAnchorClick(e, "/#contact")}>联系</Link>
+              <a className="nav-action nav-action-resume" href="/resume.pdf" target="_blank" rel="noreferrer">简历</a>
+            </div>
+          </nav>
+        </header>
   );
 }
 
