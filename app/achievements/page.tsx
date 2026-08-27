@@ -3,6 +3,7 @@ import Link from "next/link";
 import ScrollRevealText from "../ScrollRevealText";
 import SiteHeader from "../SiteHeader";
 import AchievementsCarousel from "./AchievementsCarousel";
+import AchievementsHashScroll from "./AchievementsHashScroll";
 import AchievementsPortfolio from "./AchievementsPortfolio";
 
 export const metadata: Metadata = {
@@ -13,9 +14,10 @@ export const metadata: Metadata = {
 export default function AchievementsPage() {
   return (
     <main className="achievements-page">
+      <AchievementsHashScroll />
       <SiteHeader />
 
-      <section className="achievements-shell" data-motion-group>
+      <section className="achievements-shell" id="achievements" data-motion-group>
         <Link className="achievements-back" href="/#about">← 返回关于我</Link>
         <div className="achievements-heading">
           <div className="achievements-title-row" data-motion-heading>

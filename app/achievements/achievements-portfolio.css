@@ -11,7 +11,7 @@
 }
 
 .achievements-page #projects {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 0;
 }
 
 .achievements-page .achievements-heading {
@@ -320,7 +320,7 @@
 
 @media (max-width: 720px) {
   .achievement-portfolio-content { margin-top: 26px; }
-  .achievements-page #projects { scroll-margin-top: 76px; }
+  .achievements-page #projects { scroll-margin-top: 0; }
   .achievements-page .achievements-heading p,
   .achievements-page .achievements-heading h1 { font-size: clamp(29px, 7.2vw, 36px); }
   .achievements-page .achievements-intro-reveal { margin-top: 9px; }

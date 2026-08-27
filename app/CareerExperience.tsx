@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { useState } from "react";
@@ -105,7 +104,7 @@ export default function CareerExperience() {
               <div>
                 <strong>20 万+</strong>
                 <span>多条作品播放表现</span>
-                <Link className="career-achievement-link" href="/achievements">成就 →</Link>
+                <a className="career-achievement-link" href="/achievements#achievements">成就 →</a>
               </div>
             </div>
 
