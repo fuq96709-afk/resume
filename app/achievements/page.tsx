@@ -18,7 +18,7 @@ export default function AchievementsPage() {
       <SiteHeader />
 
       <section className="achievements-shell" id="achievements" data-motion-group>
-        <Link className="achievements-back" href="/#about">← 返回关于我</Link>
+        <Link className="achievements-back" href="/#about" onClick={(e) => { e.preventDefault(); window.location.href = "/#about"; }}>← 返回关于我</Link>
         <div className="achievements-heading">
           <div className="achievements-title-row" data-motion-heading>
             <p>ACHIEVEMENTS</p>
