@@ -2471,7 +2471,8 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   position: absolute;
   z-index: 6;
   top: 30%;
-  left: 37.2727%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 280px;
   height: 280px;
   overflow: visible;
