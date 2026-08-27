@@ -87,7 +87,7 @@ export default function SiteHeader({ activeItem }: SiteHeaderProps) {
                             <div className="nav-work-menu">
                               <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/#work" scroll={false} onClick={(e) => handleAnchorClick(e, "/#work")}>作品</Link>
                 <div className="nav-work-dropdown" aria-label="作品子菜单">
-                                  <Link href="/achievements" scroll={false}>成就</Link>
+                                  <Link href="/achievements">成就</Link>
                                   <Link href="/achievements#projects" scroll={false} onClick={(e) => handleAnchorClick(e, "/achievements#projects")}>更多作品</Link>
                 </div>
               </div>
