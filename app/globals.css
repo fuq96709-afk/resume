@@ -2484,17 +2484,15 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 
 @media (max-width: 768px) {
   .hero-profile-card {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    height: 220px;
-    border-radius: 44px;
+    width: 180px;
+    height: 180px;
+    border-radius: 38px;
   }
   .hero-profile-card .tilted-card-inner {
-    border-radius: 44px;
+    border-radius: 38px;
   }
   .hero-profile-card .tilted-card-img {
-    border-radius: 44px;
+    border-radius: 38px;
   }
 }
 
