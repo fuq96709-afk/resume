@@ -10,7 +10,8 @@ type SiteHeaderProps = {
 
 export default function SiteHeader({ activeItem }: SiteHeaderProps) {
   const pathname = usePathname();
-    const [isHidden, setIsHidden] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [workMenuOpen, setWorkMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
   const frame = useRef<number | null>(null);
   const smartHideEnabled = pathname !== "/works";
@@ -84,9 +85,9 @@ export default function SiteHeader({ activeItem }: SiteHeaderProps) {
               <Link className={activeItem === "home" ? "is-active" : undefined} href="/#home" scroll={false} onClick={(e) => handleAnchorClick(e, "/#home")}>首页</Link>
                             <Link href="/#about" scroll={false} onClick={(e) => handleAnchorClick(e, "/#about")}>关于我</Link>
                             <Link href="/#career" scroll={false} onClick={(e) => handleAnchorClick(e, "/#career")}>工作经历</Link>
-                            <div className="nav-work-menu">
-                              <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/#work" scroll={false} onClick={(e) => handleAnchorClick(e, "/#work")}>作品</Link>
-                <div className="nav-work-dropdown" aria-label="作品子菜单">
+                            <div className="nav-work-menu" onMouseEnter={() => setWorkMenuOpen(true)} onMouseLeave={() => setWorkMenuOpen(false)} onClick={() => setWorkMenuOpen(!workMenuOpen)}>
+                                                          <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/#work" scroll={false} onClick={(e) => { handleAnchorClick(e, "/#work"); setWorkMenuOpen(false); }}>作品</Link>
+                                            <div className={`nav-work-dropdown${workMenuOpen ? " is-open" : ""}`} aria-label="作品子菜单">
                                   <Link href="/achievements">成就</Link>
                                   <Link href="/achievements#projects" scroll={false} onClick={(e) => handleAnchorClick(e, "/achievements#projects")}>更多作品</Link>
                 </div>

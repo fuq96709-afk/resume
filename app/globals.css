@@ -1135,7 +1135,8 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 }
 
 .nav-work-menu:hover .nav-work-dropdown,
-.nav-work-menu:focus-within .nav-work-dropdown {
+.nav-work-menu:focus-within .nav-work-dropdown,
+.nav-work-dropdown.is-open {
   visibility: visible;
   opacity: 1;
   transform: translate(-50%, 0) scale(1);
