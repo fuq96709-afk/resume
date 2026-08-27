@@ -44,12 +44,12 @@ export default function Home() {
             <span className="hero-cta-label">Let&apos;s Work Together!</span>
             <span className="hero-cta-arrow" aria-hidden="true">↓</span>
           </a>
-          <Image className="hero-shape hero-shape-pyramid" src="/hero-shape-pyramid.webp" alt="" width={280} height={280} aria-hidden="true" />
-          <span className="hero-shape hero-shape-orb" aria-hidden="true" />
-          <Image className="hero-shape hero-shape-cylinder" src="/hero-shape-cylinder.webp" alt="" width={280} height={280} aria-hidden="true" />
-          <Image className="hero-shape hero-shape-star" src="/hero-shape-star.webp" alt="" width={280} height={280} aria-hidden="true" />
-          <Image className="hero-shape hero-shape-green" src="/hero-shape-green.webp" alt="" width={280} height={280} aria-hidden="true" />
-          <Image className="hero-shape hero-shape-cube" src="/hero-shape-cube.webp" alt="" width={280} height={280} aria-hidden="true" />
+          <img className="hero-shape hero-shape-pyramid" src="/hero-shape-pyramid.webp" alt="" width={280} height={280} aria-hidden="true" />
+                    <span className="hero-shape hero-shape-orb" aria-hidden="true" />
+                    <img className="hero-shape hero-shape-cylinder" src="/hero-shape-cylinder.webp" alt="" width={280} height={280} aria-hidden="true" />
+                    <img className="hero-shape hero-shape-star" src="/hero-shape-star.webp" alt="" width={280} height={280} aria-hidden="true" />
+                    <img className="hero-shape hero-shape-green" src="/hero-shape-green.webp" alt="" width={280} height={280} aria-hidden="true" />
+                    <img className="hero-shape hero-shape-cube" src="/hero-shape-cube.webp" alt="" width={280} height={280} aria-hidden="true" />
         </div>
       </section>
 
