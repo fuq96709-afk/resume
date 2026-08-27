@@ -78,7 +78,7 @@ export default function WorkShowcase() {
     if (!isVisible) return;
 
     reduceMotionRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const delay = firstPlayRef.current || reduceMotionRef.current ? 120 : 920;
+    const delay = firstPlayRef.current || reduceMotionRef.current ? 500 : 2000;
     firstPlayRef.current = false;
     const current = videoRefs.current[activeVideo];
     if (!current) return;
