@@ -4,10 +4,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import ScrollRevealText from "./ScrollRevealText";
 
 const videos = [
-  { src: "/works/tarot-jewelry.mp4", title: "塔罗珠宝品牌氛围", tag: "AI BRAND FILM" },
-  { src: "/works/ugc-product.mp4", title: "UGC 产品展示", tag: "UGC STYLE" },
-  { src: "/works/rust-removal.mp4", title: "除锈效果展示", tag: "PRODUCT DEMO" },
-  { src: "/works/tiktok-case.mp4", title: "TikTok 短视频案例", tag: "TIKTOK VIDEO" },
+  { src: "/works/tarot-jewelry.mp4", poster: "/works/tarot-jewelry-poster.jpg", title: "塔罗珠宝品牌氛围", tag: "AI BRAND FILM" },
+  { src: "/works/ugc-product.mp4", poster: "/works/ugc-product-poster.jpg", title: "UGC 产品展示", tag: "UGC STYLE" },
+  { src: "/works/rust-removal.mp4", poster: "/works/rust-removal-poster.jpg", title: "除锈效果展示", tag: "PRODUCT DEMO" },
+  { src: "/works/tiktok-case.mp4", poster: "/works/tiktok-case-poster.jpg", title: "TikTok 短视频案例", tag: "TIKTOK VIDEO" },
 ];
 
 const sopSteps = [
@@ -143,6 +143,7 @@ export default function WorkShowcase() {
                     <video
                       ref={(element) => { videoRefs.current[index] = element; }}
                       src={video.src}
+                      poster={video.poster}
                       muted
                       playsInline
                       preload="none"
