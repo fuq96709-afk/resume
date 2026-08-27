@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type SiteHeaderProps = {
@@ -10,33 +10,34 @@ type SiteHeaderProps = {
 
 export default function SiteHeader({ activeItem }: SiteHeaderProps) {
   const pathname = usePathname();
-  const router = useRouter();
-  const [isHidden, setIsHidden] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
   const lastScrollY = useRef(0);
   const frame = useRef<number | null>(null);
   const smartHideEnabled = pathname !== "/works";
 
   const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      const hashIndex = href.indexOf("#");
-      if (hashIndex === -1) return;
-      const hash = href.slice(hashIndex);
+      (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        const hashIndex = href.indexOf("#");
+        if (hashIndex === -1) return; // no hash, let Next.js handle it
 
-      if (pathname === "/" || pathname === "") {
-        // On home page, scroll to the anchor
-        e.preventDefault();
-        const el = document.querySelector(hash);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
+        const hash = href.slice(hashIndex);
+        const basePath = href.slice(0, hashIndex) || "/";
+
+        if (pathname === basePath) {
+          // Same page — scroll to the anchor
+          e.preventDefault();
+          const el = document.querySelector(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        } else {
+          // Different page — navigate then scroll
+          e.preventDefault();
+          window.location.href = href;
         }
-      } else {
-        // Navigate to home first, then scroll
-        e.preventDefault();
-        router.push("/" + hash);
-      }
-    },
-    [pathname, router],
-  );
+      },
+      [pathname],
+    );
 
   useEffect(() => {
     setIsHidden(false);
@@ -86,8 +87,8 @@ export default function SiteHeader({ activeItem }: SiteHeaderProps) {
                             <div className="nav-work-menu">
                               <Link className={`nav-work-trigger${activeItem === "works" ? " is-active" : ""}`} href="/#work" scroll={false} onClick={(e) => handleAnchorClick(e, "/#work")}>作品</Link>
                 <div className="nav-work-dropdown" aria-label="作品子菜单">
-                  <Link href="/achievements">成就</Link>
-                  <Link href="/achievements#projects">更多作品</Link>
+                                  <Link href="/achievements" scroll={false}>成就</Link>
+                                  <Link href="/achievements#projects" scroll={false} onClick={(e) => handleAnchorClick(e, "/achievements#projects")}>更多作品</Link>
                 </div>
               </div>
             </div>
