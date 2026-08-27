@@ -15,6 +15,7 @@ export default function HeroTiltedPortrait() {
       scaleOnHover={1.2}
       showMobileWarning={false}
       showTooltip={false}
+      disableTiltOnTouch
     />
   );
 }

@@ -21,7 +21,8 @@ export default function TiltedCard({
   showMobileWarning = true,
   showTooltip = true,
   overlayContent = null,
-  displayOverlayContent = false
+  displayOverlayContent = false,
+  disableTiltOnTouch = false
 }) {
   const ref = useRef(null);
 
@@ -76,7 +77,7 @@ export default function TiltedCard({
   return (
     <figure
       ref={ref}
-      className="tilted-card-figure"
+      className={`tilted-card-figure${disableTiltOnTouch ? ' is-static-on-touch' : ''}`}
       style={{
         height: containerHeight,
         width: containerWidth

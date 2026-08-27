@@ -2750,17 +2750,25 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
 
   .hero-profile-card {
     top: 176px;
-    left: 50%;
+    left: 0;
+    right: 0;
     width: 210px;
     height: 210px;
+    margin-inline: auto;
     border-radius: 44px;
-    translate: -50% 0;
+    translate: none;
     transform: none;
   }
 
   .hero-profile-card .tilted-card-inner,
   .hero-profile-card .tilted-card-img {
     border-radius: 44px;
+  }
+
+  .hero-profile-card .tilted-card-figure,
+  .hero-profile-card .tilted-card-inner,
+  .hero-profile-card .tilted-card-img {
+    transform-origin: center center;
   }
 
   .hero-profile-meta {
@@ -3695,5 +3703,4 @@ body.has-custom-cursor [data-cursor] { cursor: none; }
   .project-collection-title-row h1 { padding-left: 11px; font-size: clamp(32px, 9vw, 44px); }
   .works-route-hero { min-height: 64dvh; padding-top: 130px; padding-bottom: 76px; }
 }
-
 
