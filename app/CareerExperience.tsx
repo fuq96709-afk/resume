@@ -82,7 +82,7 @@ export default function CareerExperience() {
             onPointerMove={setPointerVariables}
             onPointerLeave={resetTilt}
           >
-            <Image src="/career-workspace.png" alt="付沣在创作工作台前的工作场景" fill sizes="(max-width: 760px) 100vw, 420px" />
+            <Image src="/career-workspace.jpg" alt="付沣在创作工作台前的工作场景" fill sizes="(max-width: 760px) 100vw, 420px" />
           </figure>
 
           <div className="career-profile" data-motion-card>

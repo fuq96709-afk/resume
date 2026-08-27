@@ -5,7 +5,7 @@ import TiltedCard from "../components/TiltedCard/TiltedCard";
 export default function HeroTiltedPortrait() {
   return (
     <TiltedCard
-      imageSrc="/portrait-web.png"
+      imageSrc="/portrait-web.jpg"
       altText="付沣的个人形象照"
       containerHeight="100%"
       containerWidth="100%"
