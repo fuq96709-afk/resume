@@ -20,7 +20,7 @@ const experiences = [
     body: "参与现场管理、进度控制、质量安全和班组协调，积累多方协作与执行经验。",
   },
   {
-    date: "2023.09 - 2024.11",
+    date: "2023.09 - 2023.11",
     company: "深圳市验厂通技术有限公司",
     role: "销售员",
     body: "负责客户开发与维护，业绩保持团队前 10%，参与展会客户拓展和业务沟通。",
@@ -170,4 +170,3 @@ export default function CareerExperience() {
     </section>
   );
 }
-
